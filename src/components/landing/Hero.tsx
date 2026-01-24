@@ -4,6 +4,7 @@ import { ArrowRight, Play, CheckCircle2, Building2, Users, Shield } from 'lucide
 import { Spotlight } from '@/components/ui/spotlight';
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
 
 const benefits = [
@@ -119,14 +120,14 @@ export const Hero = () => {
             The all-in-one platform trusted by Fortune 500 companies to streamline HR operations, drive engagement, and scale globally.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs with magnetic effect */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MagneticButton strength={0.4}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group">
                 Start Free Trial
                 <motion.span
@@ -137,8 +138,8 @@ export const Hero = () => {
                   <ArrowRight className="w-5 h-5" />
                 </motion.span>
               </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            </MagneticButton>
+            <MagneticButton strength={0.3}>
               <Button 
                 variant="outline" 
                 size="lg" 
@@ -147,7 +148,7 @@ export const Hero = () => {
                 <Play className="w-5 h-5 mr-2" />
                 Watch Demo
               </Button>
-            </motion.div>
+            </MagneticButton>
           </motion.div>
 
           {/* Benefits */}
