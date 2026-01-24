@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -41,14 +41,32 @@ const logos = ['Stripe', 'Airbnb', 'Notion', 'Figma', 'Linear', 'Vercel'];
 
 export const Testimonials = () => {
   const ref = useRef(null);
+  const sectionRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [activeIndex, setActiveIndex] = useState(0);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const decorY = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   const nextSlide = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
   const prevSlide = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="testimonials" className="py-24 lg:py-32 bg-white relative overflow-hidden">
+      {/* Parallax background decorations */}
+      <motion.div 
+        style={{ y: bgY }}
+        className="absolute top-0 right-0 w-96 h-96 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none"
+      />
+      <motion.div 
+        style={{ y: decorY }}
+        className="absolute bottom-0 left-0 w-72 h-72 bg-primary/[0.02] rounded-full blur-3xl pointer-events-none"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
