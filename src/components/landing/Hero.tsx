@@ -98,12 +98,12 @@ export const Hero = () => {
               animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-sm font-medium text-primary">Enterprise-Grade HRIS Platform</span>
+            <span className="text-sm font-medium text-primary">AI Powered Modern ERP Dashboard</span>
           </motion.div>
 
           {/* Heading with animated text */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-            <AnimatedText text="Human Resources," delay={0.2} />
+            <AnimatedText text="Enterprise Operations," delay={0.2} />
             <br />
             <span className="text-primary">
               <AnimatedLetters text="Reimagined" delay={0.5} staggerDelay={0.04} />
@@ -117,7 +117,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            The all-in-one platform trusted by Fortune 500 companies to streamline HR operations, drive engagement, and scale globally.
+            The all-in-one AI-powered ERP platform trusted by Fortune 500 companies to streamline operations, drive engagement, and scale globally.
           </motion.p>
 
           {/* CTAs with magnetic effect */}
@@ -215,7 +215,7 @@ export const Hero = () => {
             >
               <img
                 src={heroDashboard}
-                alt="HRFlow Dashboard"
+                alt="Appsisten Dashboard"
                 className="w-full h-auto"
               />
               {/* Subtle overlay */}

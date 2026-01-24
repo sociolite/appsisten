@@ -27,9 +27,9 @@ export const Footer = () => {
             whileHover={{ scale: 1.02 }}
           >
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
+              <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span className="font-heading font-bold text-lg text-foreground">HRFlow</span>
+            <span className="font-heading font-bold text-lg text-foreground">Appsisten</span>
           </motion.a>
 
           {/* Links */}
@@ -71,7 +71,7 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
         >
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} HRFlow. All rights reserved.
+            © {new Date().getFullYear()} Appsisten. All rights reserved.
           </p>
         </motion.div>
       </div>

@@ -51,9 +51,9 @@ export const Navbar = () => {
               whileHover={{ rotate: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <span className="text-white font-bold text-sm">H</span>
+              <span className="text-white font-bold text-sm">A</span>
             </motion.div>
-            <span className="font-heading font-bold text-lg text-foreground">HRFlow</span>
+            <span className="font-heading font-bold text-lg text-foreground">Appsisten</span>
           </motion.a>
 
           {/* Desktop Navigation - Centered */}

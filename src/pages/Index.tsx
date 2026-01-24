@@ -7,12 +7,14 @@ import { Pricing } from '@/components/landing/Pricing';
 import { FAQ } from '@/components/landing/FAQ';
 import { CTA } from '@/components/landing/CTA';
 import { Footer } from '@/components/landing/Footer';
+import { AnimatedBackground } from '@/components/ui/animated-background';
 
 const Index = () => {
   useLenis();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <AnimatedBackground />
       <Navbar />
       <main>
         <Hero />
