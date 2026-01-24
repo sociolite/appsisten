@@ -1,24 +1,31 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, CheckCircle2, Building2, Users, Shield } from 'lucide-react';
-import { Spotlight } from '@/components/ui/spotlight';
-import { GridPattern } from '@/components/ui/grid-pattern';
-import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
-import { MagneticButton } from '@/components/ui/magnetic-button';
-import { NeuralNetwork } from '@/components/ui/neural-network';
-import { useLanguage } from '@/i18n/LanguageContext';
-import heroDashboard from '@/assets/hero-dashboard.jpg';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Play,
+  CheckCircle2,
+  Sparkles,
+  Users,
+  BarChart3,
+} from "lucide-react";
+import { Spotlight } from "@/components/ui/spotlight";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import { AnimatedText, AnimatedLetters } from "@/components/ui/animated-text";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+import { NeuralNetwork } from "@/components/ui/neural-network";
+import { useLanguage } from "@/i18n/LanguageContext";
+import heroDashboard from "/screen.png";
 
 const stats = [
-  { icon: Building2, value: '2,500+', label: 'Enterprise Clients' },
-  { icon: Users, value: '1M+', label: 'Employees Managed' },
-  { icon: Shield, value: '99.99%', label: 'Uptime SLA' },
+  { icon: Sparkles, value: "AI-Powered", label: "Smart Automation" },
+  { icon: Users, value: "HR & Payroll", label: "Employee Management" },
+  { icon: BarChart3, value: "Real-time", label: "Analytics & Reports" },
 ];
 
 export const Hero = () => {
   const { t } = useLanguage();
   const { scrollY } = useScroll();
-  
+
   // Parallax transforms for background elements
   const bgY1 = useTransform(scrollY, [0, 500], [0, 150]);
   const bgY2 = useTransform(scrollY, [0, 500], [0, 100]);
@@ -26,19 +33,22 @@ export const Hero = () => {
   const bgScale = useTransform(scrollY, [0, 300], [1, 1.1]);
   const bgOpacity = useTransform(scrollY, [0, 400], [0.5, 0.2]);
 
-  const benefits = t('hero.trust').split('•').map(s => s.trim()).filter(Boolean);
+  const benefits = t("hero.trust")
+    .split("•")
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-28 pb-20">
       {/* Interactive spotlight effect */}
       <Spotlight size={600} />
-      
+
       {/* Animated grid pattern */}
       <GridPattern />
-      
+
       {/* AI Neural Network Background */}
       <NeuralNetwork />
-      
+
       {/* Parallax animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -63,13 +73,13 @@ export const Hero = () => {
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -80]) }}
           animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/3 left-[5%] w-4 h-4 border-2 border-primary/20 rounded-full"
         />
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -120]) }}
           animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/2 right-[8%] w-6 h-6 border-2 border-primary/15 rotate-45"
         />
         <motion.div
@@ -81,7 +91,7 @@ export const Hero = () => {
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -100]) }}
           animate={{ rotate: 360 }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute top-[40%] right-[15%] w-5 h-5 border-2 border-primary/10 rounded-lg"
         />
       </div>
@@ -95,20 +105,26 @@ export const Hero = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
           >
-            <motion.span 
+            <motion.span
               className="flex h-2 w-2 rounded-full bg-primary"
               animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-sm font-medium text-primary">{t('hero.badge')}</span>
+            <span className="text-sm font-medium text-primary">
+              {t("hero.badge")}
+            </span>
           </motion.div>
 
           {/* Heading with animated text */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-            <AnimatedText text={t('hero.title')} delay={0.2} />
+            <AnimatedText text={t("hero.title")} delay={0.2} />
             <br />
             <span className="text-primary">
-              <AnimatedLetters text={t('hero.titleHighlight')} delay={0.5} staggerDelay={0.04} />
+              <AnimatedLetters
+                text={t("hero.titleHighlight")}
+                delay={0.5}
+                staggerDelay={0.04}
+              />
             </span>
           </h1>
 
@@ -119,7 +135,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            {t('hero.subtitle')}
+            {t("hero.subtitle")}
           </motion.p>
 
           {/* CTAs with magnetic effect */}
@@ -130,8 +146,11 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
             <MagneticButton strength={0.4}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group">
-                {t('hero.cta.primary')}
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group"
+              >
+                {t("hero.cta.primary")}
                 <motion.span
                   className="ml-2"
                   animate={{ x: [0, 4, 0] }}
@@ -142,13 +161,13 @@ export const Hero = () => {
               </Button>
             </MagneticButton>
             <MagneticButton strength={0.3}>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="rounded-xl px-8 h-14 text-base border-2 border-border hover:border-primary/30 hover:bg-primary/5"
               >
                 <Play className="w-5 h-5 mr-2" />
-                {t('hero.cta.secondary')}
+                {t("hero.cta.secondary")}
               </Button>
             </MagneticButton>
           </motion.div>
@@ -161,8 +180,8 @@ export const Hero = () => {
             className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
           >
             {benefits.map((benefit, index) => (
-              <motion.div 
-                key={benefit} 
+              <motion.div
+                key={benefit}
                 className="flex items-center gap-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -187,14 +206,20 @@ export const Hero = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, x: index === 0 ? -40 : index === 2 ? 40 : 0, y: index === 1 ? 40 : 0 }}
+                initial={{
+                  opacity: 0,
+                  x: index === 0 ? -40 : index === 2 ? 40 : 0,
+                  y: index === 1 ? 40 : 0,
+                }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 + index * 0.15 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className={`absolute z-20 bg-white p-4 rounded-2xl shadow-lg border border-border/50 ${
-                  index === 0 ? '-left-4 lg:-left-12 top-1/4' :
-                  index === 1 ? 'left-1/2 -translate-x-1/2 -bottom-6' :
-                  '-right-4 lg:-right-12 top-1/3'
+                  index === 0
+                    ? "-left-4 lg:-left-12 top-1/4"
+                    : index === 1
+                      ? "left-1/2 -translate-x-1/2 -bottom-6"
+                      : "-right-4 lg:-right-12 top-1/3"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -202,15 +227,19 @@ export const Hero = () => {
                     <stat.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold text-foreground">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
+                    <p className="text-xl font-bold text-foreground">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {stat.label}
+                    </p>
                   </div>
                 </div>
               </motion.div>
             ))}
-            
+
             {/* Image container */}
-            <motion.div 
+            <motion.div
               className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-border/30"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.4 }}

@@ -8,7 +8,7 @@
     "pricing": "Pricing",
     "about": "About",
     "login": "Login",
-    "getStarted": "Get Started Free"
+    "getStarted": "Get Started!"
   },
   "hero": {
     "badge": "Powered by AI",
@@ -88,70 +88,54 @@
     }
   },
   "pricing": {
-    "sectionTitle": "Simple, Transparent Pricing",
-    "sectionSubtitle": "Start free, upgrade as you grow",
+    "sectionTitle": "Pay Only for What You Need",
+    "sectionSubtitle": "Choose the modules you need, pay per employee",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "yearlyDiscount": "Save 20%",
     "perMonth": "/month",
+    "perEmployee": "/employee",
     "popular": "Most Popular",
     "currency": "Rp",
-    "tiers": {
-      "free": {
-        "name": "Free",
-        "price": "0",
-        "description": "For micro businesses getting started",
-        "cta": "Start Free",
-        "features": [
-          "Up to 5 employees",
-          "1 store",
-          "Basic HR features",
-          "Community support"
-        ]
-      },
+    "basePrice": "Starting from",
+    "addModules": "+ Add Modules",
+    "bundles": {
+      "title": "Or Choose a Bundle",
       "starter": {
-        "name": "Starter",
-        "price": "299,000",
-        "description": "For small businesses",
-        "cta": "Start Trial",
-        "features": [
-          "Up to 15 employees",
-          "1 store",
-          "GPS attendance",
-          "Basic AI features",
-          "Email support"
-        ]
+        "name": "Starter Bundle",
+        "price": "15,000",
+        "description": "Basic HR for small teams",
+        "cta": "Start Free",
+        "includes": ["GPS Attendance", "Leave & Overtime", "Employee Database", "Basic Reports"],
+        "employees": "Up to 10 employees free"
       },
-      "professional": {
-        "name": "Professional",
-        "price": "799,000",
-        "description": "For growing businesses",
-        "cta": "Start Trial",
-        "features": [
-          "Up to 50 employees",
-          "3 stores",
-          "Full AI automation",
-          "Custom roles",
-          "API access",
-          "Priority support"
-        ]
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "1,999,000",
-        "description": "For established businesses",
-        "cta": "Contact Sales",
-        "features": [
-          "Up to 200 employees",
-          "10 stores",
-          "Advanced AI analytics",
-          "SSO/SAML",
-          "Dedicated account manager",
-          "Custom integrations"
-        ]
+      "hr": {
+        "name": "HR Complete",
+        "price": "35,000",
+        "description": "Full HR & Payroll solution",
+        "cta": "Try 14 Days",
+        "includes": ["All Starter features", "Payroll & Tax", "BPJS Integration", "Shift Management", "Performance Reviews", "Recruitment"],
+        "employees": "Per employee/month"
       }
     },
-    "guarantee": "30-day money-back guarantee",
+    "modules": {
+      "title": "Available Modules",
+      "items": [
+        { "name": "GPS Attendance", "price": "5,000", "description": "Clock in/out with GPS validation & anti-fake detection", "category": "hr" },
+        { "name": "Facial Recognition", "price": "8,000", "description": "Biometric attendance with face verification", "category": "hr" },
+        { "name": "Leave & Overtime", "price": "5,000", "description": "Leave requests, policies, calendar & overtime tracking", "category": "hr" },
+        { "name": "Shift Management", "price": "4,000", "description": "Shift scheduling, templates & multi-shift assignment", "category": "hr" },
+        { "name": "Payroll & Tax", "price": "12,000", "description": "Auto payroll, PPh 21, payslips & bank transfer", "category": "payroll" },
+        { "name": "BPJS Integration", "price": "3,000", "description": "BPJS Health & Employment auto-calculation", "category": "payroll" },
+        { "name": "Performance Management", "price": "6,000", "description": "Reviews, KPI tracking & 360° feedback", "category": "hr" },
+        { "name": "Recruitment", "price": "5,000", "description": "Job posting, applicant tracking & career page", "category": "hr" },
+        { "name": "Finance Module", "price": "6,000", "description": "Reimbursement, cash advance & expense tracking", "category": "finance" },
+        { "name": "Inventory", "price": "8,000", "description": "Stock tracking, multi-warehouse & stock opname", "category": "operations" },
+        { "name": "CRM", "price": "8,000", "description": "Customer database, leads, deals & membership", "category": "operations" },
+        { "name": "AI Assistant", "price": "10,000", "description": "AI-powered insights, anomaly detection & chatbot", "category": "ai" }
+      ]
+    },
+    "guarantee": "Cancel anytime",
     "noCard": "No credit card required for free trial"
   },
   "testimonials": {
@@ -183,24 +167,28 @@
     "sectionSubtitle": "Got questions? We've got answers",
     "items": [
       {
-        "question": "How does the AI work?",
-        "answer": "Our AI analyzes your business data to automate tasks like attendance verification, payroll calculation, and anomaly detection. It learns from your patterns to provide better recommendations over time."
+        "question": "How does AI detect attendance fraud?",
+        "answer": "Appsisten AI automatically detects fake GPS, unusual attendance patterns, and location anomalies. The system compares location data with history and provides real-time alerts if fraud is detected."
       },
       {
-        "question": "Is my data safe?",
-        "answer": "Yes. We use end-to-end encryption, and our servers are located in Indonesia in compliance with local regulations. We're ISO 27001 certified."
+        "question": "Does payroll calculation include tax and BPJS?",
+        "answer": "Yes, our system automatically calculates PPh 21, BPJS Health, BPJS Employment, THR, and all salary components according to the latest Indonesian regulations. Digital payslips are sent directly to employees."
       },
       {
-        "question": "How long does setup take?",
-        "answer": "Most businesses are up and running in under 30 minutes. For data migration from existing systems, our team typically completes it in 1-3 business days."
+        "question": "Can employees request leave and overtime via mobile?",
+        "answer": "Absolutely. Employees can clock in/out, request leave, claim overtime, and access payslips through the mobile app. Managers receive instant notifications for approval."
       },
       {
-        "question": "Can I integrate with existing systems?",
-        "answer": "Yes. Professional and Enterprise plans include API access and we support integrations with popular accounting software, e-commerce platforms, and more."
+        "question": "What AI features are available?",
+        "answer": "Appsisten AI includes: attendance anomaly detection, automatic payroll calculation, 24/7 HR chatbot for employees, turnover prediction, and team performance insights. Everything works automatically without manual input."
       },
       {
-        "question": "What if I want to cancel?",
-        "answer": "You can cancel anytime. We offer a 30-day money-back guarantee, and your data can be exported in standard formats."
+        "question": "What's the pricing and is there a free trial?",
+        "answer": "Starting from FREE for up to 5 employees. Paid plans start at Rp299k/month. All paid plans include a 14-day free trial without credit card."
+      },
+      {
+        "question": "Is there a discount for annual payment?",
+        "answer": "Yes, you get 20% off with annual billing. For Enterprise with 100+ employees, contact our sales team for custom pricing."
       }
     ]
   },

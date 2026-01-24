@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import { useLanguage } from '@/i18n/LanguageContext';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -11,33 +11,37 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t('nav.features'), href: '#ai-features' },
-    { name: t('nav.pricing'), href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
+    { name: t("nav.features"), href: "#ai-features" },
+    { name: t("nav.pricing"), href: "#pricing" },
+    { name: "FAQ", href: "#faq" },
   ];
 
-  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-    
-    setIsMobileMenuOpen(false);
-  }, []);
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        const offsetTop =
+          element.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+
+      setIsMobileMenuOpen(false);
+    },
+    [],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -45,19 +49,21 @@ export const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-0 left-0 right-0 z-50"
     >
       <motion.div
         animate={{
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
-          boxShadow: isScrolled 
-            ? '0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)' 
-            : '0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03)',
+          backgroundColor: isScrolled
+            ? "rgba(255, 255, 255, 0.95)"
+            : "rgba(255, 255, 255, 0.8)",
+          boxShadow: isScrolled
+            ? "0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)"
+            : "none",
         }}
         transition={{ duration: 0.3 }}
-        className="backdrop-blur-xl rounded-2xl px-4 lg:px-6"
+        className="backdrop-blur-xl px-4 lg:px-8"
       >
-        <div className="flex items-center gap-6 lg:gap-8 h-14 lg:h-16">
+        <div className="relative max-w-7xl mx-auto flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <motion.a
             href="#"
@@ -65,18 +71,20 @@ export const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <motion.div 
+            <motion.div
               className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"
               whileHover={{ rotate: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
               <span className="text-white font-bold text-sm">A</span>
             </motion.div>
-            <span className="font-heading font-bold text-lg text-foreground">Appsisten</span>
+            <span className="font-heading font-bold text-lg text-foreground">
+              Appsisten
+            </span>
           </motion.a>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.name}
@@ -99,15 +107,12 @@ export const Navbar = () => {
           {/* Desktop CTA & Language Switcher */}
           <div className="hidden lg:flex items-center gap-2">
             <LanguageSwitcher />
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-              {t('nav.login')}
-            </Button>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5">
-                {t('nav.getStarted')}
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5"
+              >
+                {t("nav.getStarted")}
               </Button>
             </motion.div>
           </div>
@@ -153,7 +158,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-border/50 overflow-hidden"
+            className="mx-4 mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-border/50 overflow-hidden"
           >
             <div className="p-4 space-y-1">
               {navLinks.map((link, index) => (
@@ -174,10 +179,10 @@ export const Navbar = () => {
                   <LanguageSwitcher />
                 </div>
                 <Button variant="ghost" className="w-full justify-center">
-                  {t('nav.login')}
+                  {t("nav.login")}
                 </Button>
                 <Button className="w-full bg-primary text-white rounded-xl">
-                  {t('nav.getStarted')}
+                  {t("nav.getStarted")}
                 </Button>
               </div>
             </div>

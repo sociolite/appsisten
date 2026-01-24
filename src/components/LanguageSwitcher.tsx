@@ -1,59 +1,41 @@
 import { motion } from 'framer-motion';
-import { Globe } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
 
 const languages = [
-  { code: 'id' as const, label: 'Bahasa Indonesia', flag: '🇮🇩' },
-  { code: 'en' as const, label: 'English', flag: '🇺🇸' },
+  { code: 'id' as const, label: 'ID', flag: '🇮🇩' },
+  { code: 'en' as const, label: 'EN', flag: '🇺🇸' },
 ];
 
 export function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
-  const currentLanguage = languages.find((l) => l.code === locale);
-
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="gap-2 h-9 px-3 rounded-full border border-border/50 bg-background/50 backdrop-blur-sm hover:bg-background/80"
-        >
-          <Globe className="h-4 w-4 text-muted-foreground" />
-          <span className="text-base">{currentLanguage?.flag}</span>
-          <span className="hidden md:inline text-sm font-medium">
-            {currentLanguage?.code.toUpperCase()}
-          </span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent 
-        align="end" 
-        className="bg-background/95 backdrop-blur-xl border-border/50"
-      >
-        {languages.map((language) => (
-          <DropdownMenuItem
+    <div className="flex items-center gap-1 p-1 rounded-full bg-muted/50 border border-border/50">
+      {languages.map((language) => {
+        const isActive = locale === language.code;
+        return (
+          <motion.button
             key={language.code}
             onClick={() => setLocale(language.code)}
-            className={`gap-2 cursor-pointer ${locale === language.code ? 'bg-primary/10 text-primary' : ''}`}
+            className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              isActive
+                ? 'text-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+            whileTap={{ scale: 0.95 }}
           >
-            <motion.span 
-              className="text-base"
-              whileHover={{ scale: 1.2 }}
-            >
-              {language.flag}
-            </motion.span>
-            <span>{language.label}</span>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+            {isActive && (
+              <motion.div
+                layoutId="language-pill"
+                className="absolute inset-0 bg-background rounded-full shadow-sm"
+                transition={{ type: 'spring', duration: 0.4, bounce: 0.15 }}
+              />
+            )}
+            <span className="relative z-10 text-sm">{language.flag}</span>
+            <span className="relative z-10">{language.label}</span>
+          </motion.button>
+        );
+      })}
+    </div>
   );
 }
