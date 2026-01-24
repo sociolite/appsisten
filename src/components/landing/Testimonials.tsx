@@ -83,7 +83,7 @@ export const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-[hsl(280_80%_55%)] flex items-center justify-center text-primary-foreground font-semibold">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold">
                   {testimonial.avatar}
                 </div>
                 <div>
