@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle2, Building2, Users, Shield } from 'lucide-react';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
@@ -16,21 +16,53 @@ const stats = [
 ];
 
 export const Hero = () => {
+  const { scrollY } = useScroll();
+  
+  // Parallax transforms for background elements
+  const bgY1 = useTransform(scrollY, [0, 500], [0, 150]);
+  const bgY2 = useTransform(scrollY, [0, 500], [0, 100]);
+  const bgY3 = useTransform(scrollY, [0, 500], [0, 200]);
+  const bgScale = useTransform(scrollY, [0, 300], [1, 1.1]);
+  const bgOpacity = useTransform(scrollY, [0, 400], [0.5, 0.2]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-28 pb-20">
-      {/* Subtle animated background elements */}
+      {/* Parallax animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ duration: 2 }}
+          style={{ y: bgY1, scale: bgScale, opacity: bgOpacity }}
           className="absolute top-20 right-[20%] w-72 h-72 bg-primary/5 rounded-full blur-3xl"
         />
         <motion.div
+          style={{ y: bgY2 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.3 }}
           transition={{ duration: 2, delay: 0.5 }}
           className="absolute bottom-40 left-[10%] w-96 h-96 bg-primary/3 rounded-full blur-3xl"
+        />
+        <motion.div
+          style={{ y: bgY3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ duration: 2, delay: 1 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-3xl"
+        />
+        {/* Floating geometric shapes */}
+        <motion.div
+          style={{ y: useTransform(scrollY, [0, 500], [0, -80]) }}
+          className="absolute top-1/3 left-[5%] w-4 h-4 border-2 border-primary/20 rounded-full"
+        />
+        <motion.div
+          style={{ y: useTransform(scrollY, [0, 500], [0, -120]) }}
+          className="absolute top-1/2 right-[8%] w-6 h-6 border-2 border-primary/15 rotate-45"
+        />
+        <motion.div
+          style={{ y: useTransform(scrollY, [0, 500], [0, -60]) }}
+          className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-primary/10 rounded-full"
+        />
+        <motion.div
+          style={{ y: useTransform(scrollY, [0, 500], [0, -100]) }}
+          className="absolute top-[40%] right-[15%] w-5 h-5 border-2 border-primary/10 rounded-lg rotate-12"
         />
       </div>
 

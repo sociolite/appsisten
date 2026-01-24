@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Check, ArrowRight } from 'lucide-react';
@@ -44,11 +44,29 @@ const plans = [
 
 export const Pricing = () => {
   const ref = useRef(null);
+  const sectionRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(1);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const bgY1 = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const bgY2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section ref={sectionRef} id="pricing" className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+      {/* Parallax background elements */}
+      <motion.div 
+        style={{ y: bgY1 }}
+        className="absolute top-20 left-[10%] w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none"
+      />
+      <motion.div 
+        style={{ y: bgY2 }}
+        className="absolute bottom-20 right-[10%] w-80 h-80 bg-primary/[0.02] rounded-full blur-3xl pointer-events-none"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
