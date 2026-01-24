@@ -8,41 +8,42 @@ export const CTA = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden"
+          className="relative rounded-3xl overflow-hidden bg-primary p-12 lg:p-20"
         >
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(215_90%_45%)] to-[hsl(215_80%_35%)]" />
-          
-          {/* Pattern Overlay */}
-          <div className="absolute inset-0 opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <defs>
-                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100" height="100" fill="url(#grid)" />
-            </svg>
+          {/* Animated background shapes */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              animate={{ 
+                x: [0, 100, 0],
+                y: [0, -50, 0],
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+            />
+            <motion.div
+              animate={{ 
+                x: [0, -80, 0],
+                y: [0, 60, 0],
+              }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute bottom-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl"
+            />
           </div>
 
-          {/* Glow Effects */}
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-
           {/* Content */}
-          <div className="relative z-10 py-16 lg:py-24 px-8 lg:px-16 text-center">
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6"
             >
               Ready to transform your HR?
             </motion.h2>
@@ -51,9 +52,9 @@ export const CTA = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8"
+              className="text-lg text-white/80 mb-10"
             >
-              Join thousands of companies already using HRFlow to streamline their HR operations. Start your free trial today.
+              Join 2,500+ companies already using HRFlow. Start your free trial today.
             </motion.p>
 
             <motion.div
@@ -62,20 +63,29 @@ export const CTA = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Button
-                size="xl"
-                className="bg-background text-foreground hover:bg-background/90 shadow-lg group w-full sm:w-auto"
-              >
-                Start Free Trial
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button
-                size="xl"
-                variant="ghost"
-                className="text-primary-foreground border-2 border-primary-foreground/30 hover:bg-primary-foreground/10 w-full sm:w-auto"
-              >
-                Talk to Sales
-              </Button>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 rounded-xl h-14 px-8 text-base group"
+                >
+                  Start Free Trial
+                  <motion.span
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </motion.span>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="text-white border-2 border-white/30 hover:bg-white/10 rounded-xl h-14 px-8 text-base"
+                >
+                  Talk to Sales
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Star, Quote } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
@@ -27,21 +27,32 @@ const testimonials = [
     content: 'As a startup founder, I needed something simple yet powerful. HRFlow scales with us perfectly without breaking the bank.',
     rating: 5,
   },
+  {
+    name: 'David Kim',
+    role: 'Chief People Officer',
+    company: 'GlobalTech',
+    avatar: 'DK',
+    content: 'Managing 10,000+ employees across 30 countries was a nightmare. HRFlow made it seamless with their global compliance features.',
+    rating: 5,
+  },
 ];
 
-const logos = [
-  'TechScale', 'Innovate Labs', 'StartupFlow', 'CloudNine', 'DataSync', 'AIFirst'
-];
+const logos = ['Stripe', 'Airbnb', 'Notion', 'Figma', 'Linear', 'Vercel'];
 
 export const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="section-padding bg-background relative">
+    <section id="testimonials" className="py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
+          ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -49,70 +60,125 @@ export const Testimonials = () => {
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground">
-            Loved by HR teams worldwide
+            Trusted by Industry Leaders
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Join thousands of companies that trust HRFlow for their HR operations.
+            See why thousands of HR professionals choose HRFlow.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonial Carousel */}
+        <div className="max-w-4xl mx-auto relative">
+          <div className="overflow-hidden">
             <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+              animate={{ x: `-${activeIndex * 100}%` }}
+              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              className="flex"
             >
-              {/* Quote Icon */}
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/10 group-hover:text-primary/20 transition-colors" />
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  className="flex-shrink-0 w-full px-4"
+                >
+                  <div className="text-center py-12 px-8">
+                    {/* Rating */}
+                    <motion.div 
+                      className="flex justify-center gap-1 mb-8"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                      ))}
+                    </motion.div>
 
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
+                    {/* Content */}
+                    <motion.p 
+                      className="text-2xl lg:text-3xl font-heading text-foreground leading-relaxed mb-10"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      "{testimonial.content}"
+                    </motion.p>
 
-              {/* Content */}
-              <p className="text-foreground mb-6 leading-relaxed">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold">
-                  {testimonial.avatar}
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
-                  </p>
-                </div>
-              </div>
+                    {/* Author */}
+                    <div className="flex items-center justify-center gap-4">
+                      <motion.div 
+                        className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-lg"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      >
+                        {testimonial.avatar}
+                      </motion.div>
+                      <div className="text-left">
+                        <p className="font-semibold text-foreground text-lg">{testimonial.name}</p>
+                        <p className="text-muted-foreground">
+                          {testimonial.role}, {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={prevSlide}
+              className="w-12 h-12 rounded-full border-2 border-border flex items-center justify-center hover:border-primary transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </motion.button>
+            
+            <div className="flex gap-3">
+              {testimonials.map((_, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === activeIndex ? 'bg-primary w-8' : 'bg-border w-2'
+                  }`}
+                  whileHover={{ scale: 1.2 }}
+                />
+              ))}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={nextSlide}
+              className="w-12 h-12 rounded-full border-2 border-border flex items-center justify-center hover:border-primary transition-colors"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </motion.button>
+          </div>
         </div>
 
         {/* Logo Cloud */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
+          className="mt-20 text-center"
         >
-          <p className="text-sm text-muted-foreground mb-6">Trusted by innovative companies</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-            {logos.map((logo) => (
-              <span
+          <p className="text-sm text-muted-foreground mb-8">Trusted by teams at</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            {logos.map((logo, index) => (
+              <motion.span
                 key={logo}
-                className="text-xl font-heading font-bold text-muted-foreground/40 hover:text-muted-foreground/60 transition-colors"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.6 + index * 0.1 }}
+                whileHover={{ scale: 1.1, color: 'hsl(215 90% 50%)' }}
+                className="text-2xl font-heading font-bold text-muted-foreground/30 cursor-default transition-colors"
               >
                 {logo}
-              </span>
+              </motion.span>
             ))}
           </div>
         </motion.div>

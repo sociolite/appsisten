@@ -1,133 +1,129 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Building2, Users, Shield } from 'lucide-react';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-};
-
-const slideInLeft = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
-};
-
-const slideInRight = {
-  initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0 },
-};
 
 const benefits = [
   'No credit card required',
   '14-day free trial',
-  'Cancel anytime',
+  'SOC 2 Compliant',
+];
+
+const stats = [
+  { icon: Building2, value: '2,500+', label: 'Enterprise Clients' },
+  { icon: Users, value: '1M+', label: 'Employees Managed' },
+  { icon: Shield, value: '99.99%', label: 'Uptime SLA' },
 ];
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
-      {/* Background Pattern */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-28 pb-20">
+      {/* Subtle animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="hero-grid" width="4" height="4" patternUnits="userSpaceOnUse">
-                <path d="M 4 0 L 0 0 0 4" fill="none" stroke="currentColor" strokeWidth="0.1" className="text-primary"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#hero-grid)" />
-          </svg>
-        </div>
-        
-        {/* Blue glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px]" />
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/3 rounded-full blur-[80px]" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 2 }}
+          className="absolute top-20 right-[20%] w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute bottom-40 left-[10%] w-96 h-96 bg-primary/3 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Badge with slide animation */}
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Enterprise Badge */}
           <motion.div
-            variants={slideInLeft}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
           >
-            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">New: AI-Powered Analytics</span>
+            <motion.span 
+              className="flex h-2 w-2 rounded-full bg-primary"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <span className="text-sm font-medium text-primary">Enterprise-Grade HRIS Platform</span>
           </motion.div>
 
-          {/* Heading with staggered word animations */}
+          {/* Heading */}
           <motion.h1
-            variants={fadeUp}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]"
           >
+            Human Resources,{' '}
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-primary inline-block"
             >
-              The modern HRIS for
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="block text-primary"
-            >
-              growing teams
+              Reimagined
             </motion.span>
           </motion.h1>
 
-          {/* Subtitle with slide animation */}
+          {/* Subtitle */}
           <motion.p
-            variants={slideInRight}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Streamline HR operations, automate workflows, and empower your people with an all-in-one platform built for the future of work.
+            The all-in-one platform trusted by Fortune 500 companies to streamline HR operations, drive engagement, and scale globally.
           </motion.p>
 
-          {/* CTAs with bounce effect */}
+          {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6, type: "spring", stiffness: 100 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
-            <Button variant="hero" size="xl" className="group w-full sm:w-auto">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
-              <Play className="w-5 h-5" />
-              Watch Demo
-            </Button>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group">
+                Start Free Trial
+                <motion.span
+                  className="ml-2"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.span>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-xl px-8 h-14 text-base border-2 border-border hover:border-primary/30 hover:bg-primary/5"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Watch Demo
+              </Button>
+            </motion.div>
           </motion.div>
 
-          {/* Benefits with stagger */}
+          {/* Benefits */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
           >
             {benefits.map((benefit, index) => (
               <motion.div 
                 key={benefit} 
                 className="flex items-center gap-2"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
               >
                 <CheckCircle2 className="w-4 h-4 text-primary" />
                 <span>{benefit}</span>
@@ -136,61 +132,54 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Hero Image with enhanced entrance */}
+        {/* Hero Image */}
         <motion.div
-          initial={{ opacity: 0, y: 80, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.8, type: "spring", stiffness: 50 }}
-          className="mt-16 lg:mt-24 relative"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-16 lg:mt-20 relative"
         >
-          <div className="relative mx-auto max-w-6xl">
-            {/* Blue glow behind image */}
-            <div className="absolute inset-0 bg-primary/10 blur-3xl scale-95 -z-10 rounded-3xl" />
-            
-            {/* Floating elements */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="absolute -left-4 lg:-left-8 top-1/4 z-20"
-            >
-              <div className="bg-white p-4 rounded-xl shadow-lg border border-border">
+          <div className="relative mx-auto max-w-5xl">
+            {/* Stats floating cards */}
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, x: index === 0 ? -40 : index === 2 ? 40 : 0, y: index === 1 ? 40 : 0 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 + index * 0.15 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className={`absolute z-20 bg-white p-4 rounded-2xl shadow-lg border border-border/50 ${
+                  index === 0 ? '-left-4 lg:-left-12 top-1/4' :
+                  index === 1 ? 'left-1/2 -translate-x-1/2 -bottom-6' :
+                  '-right-4 lg:-right-12 top-1/3'
+                }`}
+              >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <stat.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">Task Complete</p>
-                    <p className="text-xs text-muted-foreground">Onboarding finished</p>
+                    <p className="text-xl font-bold text-foreground">{stat.value}</p>
+                    <p className="text-xs text-muted-foreground">{stat.label}</p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              className="absolute -right-4 lg:-right-8 top-1/3 z-20"
-            >
-              <div className="bg-white p-4 rounded-xl shadow-lg border border-border">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-primary">98%</p>
-                  <p className="text-xs text-muted-foreground">Satisfaction Rate</p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
             
             {/* Image container */}
-            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+            <motion.div 
+              className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-border/30"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.4 }}
+            >
               <img
                 src={heroDashboard}
                 alt="HRFlow Dashboard"
                 className="w-full h-auto"
               />
               {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
-            </div>
+              <div className="absolute inset-0 bg-primary/[0.02]" />
+            </motion.div>
           </div>
         </motion.div>
       </div>
