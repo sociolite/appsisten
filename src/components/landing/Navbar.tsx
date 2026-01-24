@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -11,10 +11,26 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t('nav.features'), href: '#features' },
+    { name: t('nav.features'), href: '#ai-features' },
     { name: t('nav.pricing'), href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
   ];
+
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    
+    setIsMobileMenuOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,10 +81,11 @@ export const Navbar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.05 }}
-                className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm group"
+                className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm group cursor-pointer"
               >
                 {link.name}
                 <motion.span
@@ -143,11 +160,11 @@ export const Navbar = () => {
                 <motion.a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="block py-3 px-4 text-foreground font-medium rounded-xl hover:bg-muted transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-3 px-4 text-foreground font-medium rounded-xl hover:bg-muted transition-colors cursor-pointer"
                 >
                   {link.name}
                 </motion.a>
