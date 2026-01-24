@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "title": "Appsisten - ERP Berbasis AI untuk UKM Indonesia",
+    "description": "Platform ERP all-in-one dengan otomatisasi AI untuk HR, Keuangan, dan E-commerce."
+  },
+  "nav": {
+    "features": "Fitur",
+    "pricing": "Harga",
+    "about": "Tentang",
+    "login": "Masuk",
+    "getStarted": "Mulai Gratis"
+  },
+  "hero": {
+    "badge": "Didukung AI",
+    "title": "Kelola Bisnis dengan",
+    "titleHighlight": "Otomatisasi AI Cerdas",
+    "subtitle": "ERP modern yang berpikir untuk Anda. Otomatiskan HR, keuangan, dan operasional dengan asisten AI yang cerdas.",
+    "cta": {
+      "primary": "Coba Gratis",
+      "secondary": "Lihat Demo"
+    },
+    "trust": "Tanpa kartu kredit • Setup dalam 5 menit"
+  },
+  "socialProof": {
+    "businesses": "500+ bisnis",
+    "employees": "50.000+ karyawan",
+    "attendances": "10jt+ absensi diproses"
+  },
+  "ai": {
+    "sectionTitle": "Kenalan dengan Asisten AI Bisnis Anda",
+    "sectionSubtitle": "AI Appsisten bekerja 24/7 untuk mengotomatiskan tugas berulang dan menemukan insight yang mungkin Anda lewatkan",
+    "features": {
+      "attendance": {
+        "title": "Absensi Cerdas",
+        "description": "AI mendeteksi anomali, GPS palsu, dan pola tidak wajar secara otomatis"
+      },
+      "payroll": {
+        "title": "Hitung Gaji Otomatis",
+        "description": "AI menghitung gaji, pajak, BPJS, dan potongan tanpa kesalahan"
+      },
+      "insights": {
+        "title": "Insight Bisnis",
+        "description": "AI menganalisis data dan memberikan rekomendasi yang dapat ditindaklanjuti"
+      },
+      "chatbot": {
+        "title": "Chatbot HR",
+        "description": "Karyawan bertanya, AI menjawab instan 24/7"
+      },
+      "forecasting": {
+        "title": "Prediksi Pendapatan",
+        "description": "AI memprediksi cash flow dan memberi peringatan potensi masalah"
+      },
+      "documents": {
+        "title": "Pemrosesan Dokumen",
+        "description": "AI mengekstrak data dari faktur, kwitansi, dan formulir secara otomatis"
+      }
+    }
+  },
+  "features": {
+    "sectionTitle": "Semua yang Anda Butuhkan untuk Mengelola Bisnis",
+    "sectionSubtitle": "Solusi ERP lengkap yang dibangun untuk bisnis Indonesia",
+    "hr": {
+      "title": "Manajemen HR",
+      "description": "Database karyawan, absensi GPS, cuti, dan penilaian kinerja"
+    },
+    "finance": {
+      "title": "Keuangan & Payroll",
+      "description": "Payroll otomatis, perhitungan pajak, tracking pengeluaran, dan laporan keuangan"
+    },
+    "commerce": {
+      "title": "Integrasi E-commerce",
+      "description": "Hubungkan Tokopedia, Shopee, Lazada dan kelola semua pesanan dalam satu tempat"
+    },
+    "mobile": {
+      "title": "Aplikasi Mobile",
+      "description": "PWA untuk karyawan absen, ajukan cuti, dan akses slip gaji"
+    },
+    "security": {
+      "title": "Keamanan Enterprise",
+      "description": "Akses berbasis peran, audit log, dan enkripsi data"
+    },
+    "reports": {
+      "title": "Analitik Real-time",
+      "description": "Dashboard dan laporan yang update secara real-time"
+    }
+  },
+  "pricing": {
+    "sectionTitle": "Harga Simpel dan Transparan",
+    "sectionSubtitle": "Mulai gratis, upgrade seiring pertumbuhan",
+    "monthly": "Bulanan",
+    "yearly": "Tahunan",
+    "yearlyDiscount": "Hemat 20%",
+    "perMonth": "/bulan",
+    "popular": "Paling Populer",
+    "currency": "Rp",
+    "tiers": {
+      "free": {
+        "name": "Gratis",
+        "price": "0",
+        "description": "Untuk bisnis mikro yang baru mulai",
+        "cta": "Mulai Gratis",
+        "features": [
+          "Hingga 5 karyawan",
+          "1 toko",
+          "Fitur HR dasar",
+          "Dukungan komunitas"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "299.000",
+        "description": "Untuk bisnis kecil",
+        "cta": "Coba Sekarang",
+        "features": [
+          "Hingga 15 karyawan",
+          "1 toko",
+          "Absensi GPS",
+          "Fitur AI dasar",
+          "Dukungan email"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "799.000",
+        "description": "Untuk bisnis berkembang",
+        "cta": "Coba Sekarang",
+        "features": [
+          "Hingga 50 karyawan",
+          "3 toko",
+          "Otomatisasi AI penuh",
+          "Role kustom",
+          "Akses API",
+          "Dukungan prioritas"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "1.999.000",
+        "description": "Untuk bisnis mapan",
+        "cta": "Hubungi Sales",
+        "features": [
+          "Hingga 200 karyawan",
+          "10 toko",
+          "Analitik AI lanjutan",
+          "SSO/SAML",
+          "Account manager dedicated",
+          "Integrasi kustom"
+        ]
+      }
+    },
+    "guarantee": "Garansi uang kembali 30 hari",
+    "noCard": "Tidak perlu kartu kredit untuk trial gratis"
+  },
+  "testimonials": {
+    "sectionTitle": "Dipercaya 500+ Bisnis Indonesia",
+    "sectionSubtitle": "Lihat apa kata pelanggan kami",
+    "items": [
+      {
+        "quote": "Fitur AI absensi mendeteksi 3 karyawan yang memalsukan lokasi. Menghemat jutaan rupiah dari klaim lembur palsu.",
+        "author": "Budi Santoso",
+        "role": "HR Manager",
+        "company": "PT Maju Bersama"
+      },
+      {
+        "quote": "Payroll yang biasanya 2 hari sekarang hanya 10 menit. AI menangani semua perhitungan secara otomatis.",
+        "author": "Siti Rahayu",
+        "role": "Finance Director",
+        "company": "CV Sukses Mandiri"
+      },
+      {
+        "quote": "Akhirnya, satu platform yang menangani semua toko kami. Integrasi e-commerce-nya mulus.",
+        "author": "Ahmad Wijaya",
+        "role": "CEO",
+        "company": "Toko Makmur Group"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Pertanyaan yang Sering Diajukan",
+    "sectionSubtitle": "Punya pertanyaan? Kami punya jawabannya",
+    "items": [
+      {
+        "question": "Bagaimana cara kerja AI-nya?",
+        "answer": "AI kami menganalisis data bisnis Anda untuk mengotomatiskan tugas seperti verifikasi absensi, perhitungan payroll, dan deteksi anomali. AI belajar dari pola Anda untuk memberikan rekomendasi yang lebih baik seiring waktu."
+      },
+      {
+        "question": "Apakah data saya aman?",
+        "answer": "Ya. Kami menggunakan enkripsi end-to-end, dan server kami berlokasi di Indonesia sesuai regulasi lokal. Kami tersertifikasi ISO 27001."
+      },
+      {
+        "question": "Berapa lama proses setup?",
+        "answer": "Kebanyakan bisnis sudah bisa beroperasi dalam waktu kurang dari 30 menit. Untuk migrasi data dari sistem yang sudah ada, tim kami biasanya menyelesaikannya dalam 1-3 hari kerja."
+      },
+      {
+        "question": "Bisakah integrasi dengan sistem yang sudah ada?",
+        "answer": "Ya. Paket Professional dan Enterprise termasuk akses API dan kami mendukung integrasi dengan software akuntansi populer, platform e-commerce, dan lainnya."
+      },
+      {
+        "question": "Bagaimana jika ingin berhenti berlangganan?",
+        "answer": "Anda bisa berhenti kapan saja. Kami menawarkan garansi uang kembali 30 hari, dan data Anda bisa diekspor dalam format standar."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Siap Biarkan AI Mengelola Bisnis Anda?",
+    "subtitle": "Bergabung dengan 500+ bisnis Indonesia yang sudah menghemat 10+ jam per minggu",
+    "primary": "Coba Gratis Sekarang",
+    "secondary": "Jadwalkan Demo"
+  },
+  "footer": {
+    "tagline": "ERP Berbasis AI untuk Bisnis Indonesia",
+    "product": "Produk",
+    "company": "Perusahaan",
+    "resources": "Sumber Daya",
+    "legal": "Legal",
+    "copyright": "2024 Appsisten. Hak cipta dilindungi.",
+    "links": {
+      "features": "Fitur",
+      "pricing": "Harga",
+      "integrations": "Integrasi",
+      "changelog": "Changelog",
+      "about": "Tentang Kami",
+      "careers": "Karir",
+      "contact": "Kontak",
+      "blog": "Blog",
+      "help": "Pusat Bantuan",
+      "api": "Dokumentasi API",
+      "status": "Status",
+      "privacy": "Kebijakan Privasi",
+      "terms": "Syarat & Ketentuan",
+      "security": "Keamanan"
+    }
+  }
+}

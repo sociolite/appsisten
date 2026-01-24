@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-
-const navLinks = [
-  { name: 'Features', href: '#features' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export const Navbar = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: t('nav.features'), href: '#features' },
+    { name: t('nav.pricing'), href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,32 +79,18 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA & Language Switcher */}
           <div className="hidden lg:flex items-center gap-2">
+            <LanguageSwitcher />
             <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-              Sign In
+              {t('nav.login')}
             </Button>
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5">
-                Get Started
-              </Button>
-            </motion.div>
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-              Sign In
-            </Button>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5">
-                Get Started
+                {t('nav.getStarted')}
               </Button>
             </motion.div>
           </div>
@@ -164,11 +153,14 @@ export const Navbar = () => {
                 </motion.a>
               ))}
               <div className="pt-4 space-y-2">
+                <div className="flex justify-center pb-2">
+                  <LanguageSwitcher />
+                </div>
                 <Button variant="ghost" className="w-full justify-center">
-                  Sign In
+                  {t('nav.login')}
                 </Button>
                 <Button className="w-full bg-primary text-white rounded-xl">
-                  Get Started
+                  {t('nav.getStarted')}
                 </Button>
               </div>
             </div>

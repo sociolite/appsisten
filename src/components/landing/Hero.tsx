@@ -6,13 +6,8 @@ import { GridPattern } from '@/components/ui/grid-pattern';
 import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { NeuralNetwork } from '@/components/ui/neural-network';
+import { useLanguage } from '@/i18n/LanguageContext';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
-
-const benefits = [
-  'No credit card required',
-  '14-day free trial',
-  'SOC 2 Compliant',
-];
 
 const stats = [
   { icon: Building2, value: '2,500+', label: 'Enterprise Clients' },
@@ -21,6 +16,7 @@ const stats = [
 ];
 
 export const Hero = () => {
+  const { t } = useLanguage();
   const { scrollY } = useScroll();
   
   // Parallax transforms for background elements
@@ -29,6 +25,8 @@ export const Hero = () => {
   const bgY3 = useTransform(scrollY, [0, 500], [0, 200]);
   const bgScale = useTransform(scrollY, [0, 300], [1, 1.1]);
   const bgOpacity = useTransform(scrollY, [0, 400], [0.5, 0.2]);
+
+  const benefits = t('hero.trust').split('•').map(s => s.trim()).filter(Boolean);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-28 pb-20">
@@ -40,6 +38,7 @@ export const Hero = () => {
       
       {/* AI Neural Network Background */}
       <NeuralNetwork />
+      
       {/* Parallax animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -101,15 +100,15 @@ export const Hero = () => {
               animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-sm font-medium text-primary">AI Powered Modern ERP Dashboard</span>
+            <span className="text-sm font-medium text-primary">{t('hero.badge')}</span>
           </motion.div>
 
           {/* Heading with animated text */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-            <AnimatedText text="Enterprise Operations," delay={0.2} />
+            <AnimatedText text={t('hero.title')} delay={0.2} />
             <br />
             <span className="text-primary">
-              <AnimatedLetters text="Reimagined" delay={0.5} staggerDelay={0.04} />
+              <AnimatedLetters text={t('hero.titleHighlight')} delay={0.5} staggerDelay={0.04} />
             </span>
           </h1>
 
@@ -120,7 +119,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            The all-in-one AI-powered ERP platform trusted by Fortune 500 companies to streamline operations, drive engagement, and scale globally.
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* CTAs with magnetic effect */}
@@ -132,7 +131,7 @@ export const Hero = () => {
           >
             <MagneticButton strength={0.4}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group">
-                Start Free Trial
+                {t('hero.cta.primary')}
                 <motion.span
                   className="ml-2"
                   animate={{ x: [0, 4, 0] }}
@@ -149,7 +148,7 @@ export const Hero = () => {
                 className="rounded-xl px-8 h-14 text-base border-2 border-border hover:border-primary/30 hover:bg-primary/5"
               >
                 <Play className="w-5 h-5 mr-2" />
-                Watch Demo
+                {t('hero.cta.secondary')}
               </Button>
             </MagneticButton>
           </motion.div>
