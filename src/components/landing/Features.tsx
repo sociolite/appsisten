@@ -1,36 +1,34 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { 
-  Bot,
-  UserSearch,
-  FileSearch,
-  Workflow,
-  ChevronLeft,
-  ChevronRight,
-  Sparkles
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import {
+  AnimatedRecruiterIcon,
+  AnimatedAssistantIcon,
+  AnimatedDocumentIcon,
+  AnimatedWorkflowIcon,
+} from '@/components/ui/animated-ai-icons';
 
 const features = [
   {
-    icon: UserSearch,
+    icon: AnimatedRecruiterIcon,
     title: 'AI Recruiter',
     description: 'Intelligent candidate sourcing and screening. Our AI analyzes resumes, matches skills, and ranks applicants to find your perfect hire.',
     highlight: 'Smart Hiring',
   },
   {
-    icon: Bot,
+    icon: AnimatedAssistantIcon,
     title: 'AI Personal Assistant',
     description: 'Your 24/7 intelligent assistant handles scheduling, reminders, and employee queries with natural language understanding.',
     highlight: 'Always On',
   },
   {
-    icon: FileSearch,
+    icon: AnimatedDocumentIcon,
     title: 'AI Document Processor',
     description: 'Automatically extract, classify, and process documents. From contracts to invoices, let AI handle the paperwork.',
     highlight: 'Zero Manual Work',
   },
   {
-    icon: Workflow,
+    icon: AnimatedWorkflowIcon,
     title: 'Distributed Workflows',
     description: 'Orchestrate complex multi-step processes across teams and systems with intelligent task routing and automation.',
     highlight: 'Coming Soon',
@@ -125,15 +123,18 @@ export const Features = () => {
                   whileHover={{ rotate: 5, scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <feature.icon className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`} />
+                  <feature.icon 
+                    className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`}
+                    isHovered={hoveredIndex === index}
+                  />
                   
                   {/* AI Glow effect */}
                   {!feature.comingSoon && (
                     <motion.div
                       className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl"
                       animate={{ 
-                        opacity: [0.3, 0.6, 0.3],
-                        scale: [1, 1.2, 1],
+                        opacity: hoveredIndex === index ? [0.4, 0.8, 0.4] : [0.3, 0.6, 0.3],
+                        scale: hoveredIndex === index ? [1, 1.3, 1] : [1, 1.2, 1],
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />
@@ -194,7 +195,10 @@ export const Features = () => {
                     </div>
 
                     <div className="relative w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                      <feature.icon className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`} />
+                      <feature.icon 
+                        className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`}
+                        isHovered={activeIndex === index}
+                      />
                     </div>
                     <h3 className={`relative text-xl font-heading font-semibold mb-3 ${
                       feature.comingSoon ? 'text-muted-foreground' : 'text-foreground'
