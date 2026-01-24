@@ -5,6 +5,7 @@ import { Spotlight } from '@/components/ui/spotlight';
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
 import { MagneticButton } from '@/components/ui/magnetic-button';
+import { NeuralNetwork } from '@/components/ui/neural-network';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
 
 const benefits = [
@@ -37,6 +38,8 @@ export const Hero = () => {
       {/* Animated grid pattern */}
       <GridPattern />
       
+      {/* AI Neural Network Background */}
+      <NeuralNetwork />
       {/* Parallax animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
