@@ -1,6 +1,7 @@
 import { useLenis } from '@/hooks/useLenis';
 import { Navbar } from '@/components/landing/Navbar';
 import { Hero } from '@/components/landing/Hero';
+import { LogoMarquee } from '@/components/landing/LogoMarquee';
 import { SocialProof } from '@/components/landing/SocialProof';
 import { AIFeatures } from '@/components/landing/AIFeatures';
 import { Features } from '@/components/landing/Features';
@@ -19,6 +20,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <LogoMarquee />
         <SocialProof />
         <AIFeatures />
         <Features />
