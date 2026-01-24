@@ -42,7 +42,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary via-[hsl(280_80%_55%)] to-[hsl(320_85%_60%)] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">H</span>
             </div>
             <span className="font-heading font-bold text-xl text-foreground">HRFlow</span>

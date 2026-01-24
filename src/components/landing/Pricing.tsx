@@ -97,7 +97,7 @@ export const Pricing = () => {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-[hsl(280_80%_55%)] text-primary-foreground text-sm font-semibold">
+                  <div className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold">
                     <Sparkles className="w-4 h-4" />
                     Most Popular
                   </div>
