@@ -5,9 +5,8 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Features', href: '#features' },
-  { name: 'How it Works', href: '#how-it-works' },
   { name: 'Pricing', href: '#pricing' },
-  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'FAQ', href: '#faq' },
 ];
 
 export const Navbar = () => {
@@ -27,7 +26,7 @@ export const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
     >
       <motion.div
         animate={{
@@ -39,7 +38,7 @@ export const Navbar = () => {
         transition={{ duration: 0.3 }}
         className="backdrop-blur-xl rounded-2xl px-4 lg:px-6"
       >
-        <div className="flex items-center justify-between h-14 lg:h-16">
+        <div className="flex items-center gap-6 lg:gap-8 h-14 lg:h-16">
           {/* Logo */}
           <motion.a
             href="#"
@@ -57,7 +56,7 @@ export const Navbar = () => {
             <span className="font-heading font-bold text-lg text-foreground">HRFlow</span>
           </motion.a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link, index) => (
               <motion.a
@@ -71,12 +70,26 @@ export const Navbar = () => {
                 {link.name}
                 <motion.span
                   className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100"
-                  layoutId="nav-indicator"
                   transition={{ duration: 0.2 }}
                 />
               </motion.a>
             ))}
           </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-2">
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+              Sign In
+            </Button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5">
+                Get Started
+              </Button>
+            </motion.div>
+          </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2">

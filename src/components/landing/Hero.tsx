@@ -1,6 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle2, Building2, Users, Shield } from 'lucide-react';
+import { Spotlight } from '@/components/ui/spotlight';
+import { GridPattern } from '@/components/ui/grid-pattern';
+import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
 import heroDashboard from '@/assets/hero-dashboard.jpg';
 
 const benefits = [
@@ -27,6 +30,12 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-28 pb-20">
+      {/* Interactive spotlight effect */}
+      <Spotlight size={600} />
+      
+      {/* Animated grid pattern */}
+      <GridPattern />
+      
       {/* Parallax animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -47,22 +56,30 @@ export const Hero = () => {
           transition={{ duration: 2, delay: 1 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-3xl"
         />
-        {/* Floating geometric shapes */}
+        {/* Floating geometric shapes with continuous animation */}
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -80]) }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/3 left-[5%] w-4 h-4 border-2 border-primary/20 rounded-full"
         />
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -120]) }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 right-[8%] w-6 h-6 border-2 border-primary/15 rotate-45"
         />
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -60]) }}
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 3, repeat: Infinity }}
           className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-primary/10 rounded-full"
         />
         <motion.div
           style={{ y: useTransform(scrollY, [0, 500], [0, -100]) }}
-          className="absolute top-[40%] right-[15%] w-5 h-5 border-2 border-primary/10 rounded-lg rotate-12"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+          className="absolute top-[40%] right-[15%] w-5 h-5 border-2 border-primary/10 rounded-lg"
         />
       </div>
 
@@ -70,36 +87,27 @@ export const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Enterprise Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
           >
             <motion.span 
               className="flex h-2 w-2 rounded-full bg-primary"
-              animate={{ scale: [1, 1.2, 1] }}
+              animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
             <span className="text-sm font-medium text-primary">Enterprise-Grade HRIS Platform</span>
           </motion.div>
 
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]"
-          >
-            Human Resources,{' '}
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-primary inline-block"
-            >
-              Reimagined
-            </motion.span>
-          </motion.h1>
+          {/* Heading with animated text */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
+            <AnimatedText text="Human Resources," delay={0.2} />
+            <br />
+            <span className="text-primary">
+              <AnimatedLetters text="Reimagined" delay={0.5} staggerDelay={0.04} />
+            </span>
+          </h1>
 
           {/* Subtitle */}
           <motion.p
