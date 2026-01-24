@@ -125,25 +125,32 @@ export const Pricing = () => {
                   y: hoveredPlan === index ? -8 : 0,
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className={`relative p-8 rounded-2xl transition-all duration-300 h-full ${
+                className={`relative p-8 rounded-2xl h-full overflow-hidden ${
                   plan.popular
-                    ? 'bg-primary text-white'
-                    : 'bg-white border-2 border-border hover:border-primary/30'
+                    ? 'bg-primary text-white shadow-xl'
+                    : 'bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg'
                 }`}
               >
+                {/* Glassmorphism gradient overlay */}
+                <div className={`absolute inset-0 pointer-events-none ${
+                  plan.popular 
+                    ? 'bg-gradient-to-br from-white/10 via-transparent to-white/5'
+                    : 'bg-gradient-to-br from-primary/5 via-transparent to-primary/5'
+                }`} />
+
                 {/* Popular Badge */}
                 {plan.popular && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-primary text-sm font-semibold shadow-lg"
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-background text-primary text-sm font-semibold shadow-lg border border-border/50"
                   >
                     Most Popular
                   </motion.div>
                 )}
 
                 {/* Plan Header */}
-                <div className="text-center mb-8">
+                <div className="relative text-center mb-8">
                   <h3 className={`text-xl font-heading font-semibold mb-1 ${plan.popular ? 'text-white' : 'text-foreground'}`}>
                     {plan.name}
                   </h3>
@@ -163,8 +170,16 @@ export const Pricing = () => {
                   </div>
                 </div>
 
+                {/* Divider */}
+                <motion.div 
+                  className={`my-6 h-px ${plan.popular ? 'bg-white/20' : 'bg-gradient-to-r from-transparent via-border to-transparent'}`}
+                  initial={{ scaleX: 0 }}
+                  animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
+                />
+
                 {/* Features */}
-                <ul className="space-y-4 mb-8">
+                <ul className="relative space-y-4 mb-8">
                   {plan.features.map((feature) => (
                     <motion.li 
                       key={feature} 
@@ -172,7 +187,11 @@ export const Pricing = () => {
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-white' : 'text-primary'}`} />
+                      <div className={`w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                        plan.popular ? 'bg-white/20' : 'bg-primary/10'
+                      }`}>
+                        <Check className={`w-3 h-3 ${plan.popular ? 'text-white' : 'text-primary'}`} />
+                      </div>
                       <span className={`text-sm ${plan.popular ? 'text-white/90' : 'text-muted-foreground'}`}>
                         {feature}
                       </span>
@@ -184,12 +203,13 @@ export const Pricing = () => {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  className="relative"
                 >
                   <Button
                     className={`w-full rounded-xl h-12 ${
                       plan.popular
-                        ? 'bg-white text-primary hover:bg-white/90'
-                        : 'bg-primary text-white hover:bg-primary/90'
+                        ? 'bg-background text-primary hover:bg-background/90 shadow-md'
+                        : 'bg-primary text-primary-foreground hover:bg-primary/90'
                     }`}
                   >
                     {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
