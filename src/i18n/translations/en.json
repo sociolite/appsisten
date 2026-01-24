@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "title": "Appsisten - AI-Powered ERP for Indonesian SMBs",
+    "description": "All-in-one ERP platform with AI automation for HR, Finance, and E-commerce."
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "login": "Login",
+    "getStarted": "Get Started Free"
+  },
+  "hero": {
+    "badge": "Powered by AI",
+    "title": "Run Your Business with",
+    "titleHighlight": "AI-Powered Automation",
+    "subtitle": "The modern ERP that thinks for you. Automate HR, finance, and operations with intelligent AI assistants.",
+    "cta": {
+      "primary": "Start Free Trial",
+      "secondary": "Watch Demo"
+    },
+    "trust": "No credit card required • Setup in 5 minutes"
+  },
+  "socialProof": {
+    "businesses": "500+ businesses",
+    "employees": "50,000+ employees",
+    "attendances": "10M+ attendances processed"
+  },
+  "ai": {
+    "sectionTitle": "Meet Your AI Business Assistants",
+    "sectionSubtitle": "Appsisten AI works 24/7 to automate repetitive tasks and surface insights you'd miss",
+    "features": {
+      "attendance": {
+        "title": "Smart Attendance",
+        "description": "AI detects anomalies, fake GPS, and unusual patterns automatically"
+      },
+      "payroll": {
+        "title": "Auto Payroll Calculation",
+        "description": "AI calculates salaries, taxes, BPJS, and deductions with zero errors"
+      },
+      "insights": {
+        "title": "Business Insights",
+        "description": "AI analyzes your data and surfaces actionable recommendations"
+      },
+      "chatbot": {
+        "title": "HR Chatbot",
+        "description": "Employees ask questions, AI answers instantly 24/7"
+      },
+      "forecasting": {
+        "title": "Revenue Forecasting",
+        "description": "AI predicts cash flow and alerts you to potential issues"
+      },
+      "documents": {
+        "title": "Document Processing",
+        "description": "AI extracts data from invoices, receipts, and forms automatically"
+      }
+    }
+  },
+  "features": {
+    "sectionTitle": "Everything You Need to Run Your Business",
+    "sectionSubtitle": "A complete ERP solution built for Indonesian businesses",
+    "hr": {
+      "title": "HR Management",
+      "description": "Employee database, attendance with GPS, leave management, and performance reviews"
+    },
+    "finance": {
+      "title": "Finance & Payroll",
+      "description": "Automated payroll, tax calculations, expense tracking, and financial reports"
+    },
+    "commerce": {
+      "title": "E-commerce Integration",
+      "description": "Connect Tokopedia, Shopee, Lazada and manage all orders in one place"
+    },
+    "mobile": {
+      "title": "Mobile App",
+      "description": "PWA for employees to clock in, request leave, and access payslips"
+    },
+    "security": {
+      "title": "Enterprise Security",
+      "description": "Role-based access, audit logs, and data encryption"
+    },
+    "reports": {
+      "title": "Real-time Analytics",
+      "description": "Dashboards and reports that update in real-time"
+    }
+  },
+  "pricing": {
+    "sectionTitle": "Simple, Transparent Pricing",
+    "sectionSubtitle": "Start free, upgrade as you grow",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlyDiscount": "Save 20%",
+    "perMonth": "/month",
+    "popular": "Most Popular",
+    "currency": "Rp",
+    "tiers": {
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "description": "For micro businesses getting started",
+        "cta": "Start Free",
+        "features": [
+          "Up to 5 employees",
+          "1 store",
+          "Basic HR features",
+          "Community support"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "299,000",
+        "description": "For small businesses",
+        "cta": "Start Trial",
+        "features": [
+          "Up to 15 employees",
+          "1 store",
+          "GPS attendance",
+          "Basic AI features",
+          "Email support"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "799,000",
+        "description": "For growing businesses",
+        "cta": "Start Trial",
+        "features": [
+          "Up to 50 employees",
+          "3 stores",
+          "Full AI automation",
+          "Custom roles",
+          "API access",
+          "Priority support"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "1,999,000",
+        "description": "For established businesses",
+        "cta": "Contact Sales",
+        "features": [
+          "Up to 200 employees",
+          "10 stores",
+          "Advanced AI analytics",
+          "SSO/SAML",
+          "Dedicated account manager",
+          "Custom integrations"
+        ]
+      }
+    },
+    "guarantee": "30-day money-back guarantee",
+    "noCard": "No credit card required for free trial"
+  },
+  "testimonials": {
+    "sectionTitle": "Trusted by 500+ Indonesian Businesses",
+    "sectionSubtitle": "See what our customers have to say",
+    "items": [
+      {
+        "quote": "The AI attendance feature caught 3 employees faking their location. Saved us millions in false overtime claims.",
+        "author": "Budi Santoso",
+        "role": "HR Manager",
+        "company": "PT Maju Bersama"
+      },
+      {
+        "quote": "Payroll that used to take 2 days now takes 10 minutes. The AI handles all the calculations automatically.",
+        "author": "Siti Rahayu",
+        "role": "Finance Director",
+        "company": "CV Sukses Mandiri"
+      },
+      {
+        "quote": "Finally, one platform that handles all our stores. The e-commerce integration is seamless.",
+        "author": "Ahmad Wijaya",
+        "role": "CEO",
+        "company": "Toko Makmur Group"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "sectionSubtitle": "Got questions? We've got answers",
+    "items": [
+      {
+        "question": "How does the AI work?",
+        "answer": "Our AI analyzes your business data to automate tasks like attendance verification, payroll calculation, and anomaly detection. It learns from your patterns to provide better recommendations over time."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. We use end-to-end encryption, and our servers are located in Indonesia in compliance with local regulations. We're ISO 27001 certified."
+      },
+      {
+        "question": "How long does setup take?",
+        "answer": "Most businesses are up and running in under 30 minutes. For data migration from existing systems, our team typically completes it in 1-3 business days."
+      },
+      {
+        "question": "Can I integrate with existing systems?",
+        "answer": "Yes. Professional and Enterprise plans include API access and we support integrations with popular accounting software, e-commerce platforms, and more."
+      },
+      {
+        "question": "What if I want to cancel?",
+        "answer": "You can cancel anytime. We offer a 30-day money-back guarantee, and your data can be exported in standard formats."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Let AI Run Your Business?",
+    "subtitle": "Join 500+ Indonesian businesses already saving 10+ hours per week",
+    "primary": "Start Free Trial",
+    "secondary": "Schedule a Demo"
+  },
+  "footer": {
+    "tagline": "AI-Powered ERP for Indonesian Businesses",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "copyright": "2024 Appsisten. All rights reserved.",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "changelog": "Changelog",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "blog": "Blog",
+      "help": "Help Center",
+      "api": "API Docs",
+      "status": "Status",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "security": "Security"
+    }
+  }
+}
