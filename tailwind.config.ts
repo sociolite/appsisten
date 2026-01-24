@@ -113,8 +113,8 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
       },
       boxShadow: {
-        glow: "0 0 40px -10px hsl(235 82% 60% / 0.4)",
-        "glow-lg": "0 0 60px -15px hsl(235 82% 60% / 0.5)",
+        glow: "0 0 40px -10px hsl(215 90% 50% / 0.4)",
+        "glow-lg": "0 0 60px -15px hsl(215 90% 50% / 0.5)",
       },
     },
   },

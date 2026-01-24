@@ -18,7 +18,7 @@ export const CTA = () => {
           className="relative rounded-3xl overflow-hidden"
         >
           {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(280_80%_55%)] to-[hsl(320_85%_60%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(215_90%_45%)] to-[hsl(215_80%_35%)]" />
           
           {/* Pattern Overlay */}
           <div className="absolute inset-0 opacity-10">

@@ -69,7 +69,7 @@ export const HowItWorks = () => {
                 <div className="text-center">
                   {/* Step Number */}
                   <div className="relative inline-block mb-6">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-[hsl(280_80%_55%)] flex items-center justify-center shadow-lg shadow-primary/25">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-[hsl(215_80%_35%)] flex items-center justify-center shadow-lg shadow-primary/25">
                       <step.icon className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold flex items-center justify-center">
