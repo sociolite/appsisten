@@ -71,16 +71,13 @@ export const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <motion.div
-              className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"
+            <motion.img
+              src="/images/logo.png"
+              alt="Appsisten"
+              className="h-8 w-auto"
               whileHover={{ rotate: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
-            >
-              <span className="text-white font-bold text-sm">A</span>
-            </motion.div>
-            <span className="font-heading font-bold text-lg text-foreground">
-              Appsisten
-            </span>
+            />
           </motion.a>
 
           {/* Desktop Navigation - Centered */}

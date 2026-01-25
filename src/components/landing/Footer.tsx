@@ -67,13 +67,12 @@ export const Footer = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <motion.div 
-                    className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-md"
+                  <motion.img
+                    src="/images/logo.png"
+                    alt="Appsisten"
+                    className="h-9 w-auto"
                     whileHover={{ rotate: 5 }}
-                  >
-                    <span className="text-primary-foreground font-bold text-sm">A</span>
-                  </motion.div>
-                  <span className="font-heading font-bold text-lg text-foreground">Appsisten</span>
+                  />
                 </motion.a>
 
                 {/* Navigation Links */}

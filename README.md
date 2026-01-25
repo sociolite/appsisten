@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# Appsisten Landing Page
 
-## Project info
+The marketing website for Appsisten, showcasing the multi-tenant SaaS ERP platform's features, pricing, and value proposition.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+This landing page serves as the public-facing website for Appsisten, designed to:
+- Introduce the platform to potential customers
+- Showcase features and benefits
+- Display pricing plans
+- Provide contact and support information
+- Enable customer sign-up
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+| Technology | Purpose |
+|------------|---------|
+| [Vite](https://vitejs.dev/) | Build tool |
+| [React](https://reactjs.org/) | UI framework |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling |
+| [shadcn/ui](https://ui.shadcn.com/) | UI components |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js v18+
+- npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+cd appsisten-landing
 
-Follow these steps:
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Run development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open your browser to view the landing page.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+```bash
+npm run dev           # Start Vite dev server
+npm run build         # Production build
+npm run preview       # Preview production build
+npm run lint          # Run ESLint
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+The landing page can be deployed to any static hosting service:
+- Vercel
+- Netlify
+- Cloudflare Pages
+- AWS S3 + CloudFront
 
-This project is built with:
+## Related Projects
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Project | Description |
+|---------|-------------|
+| [ecommerce-aggregator](../ecommerce-aggregator) | Customer ERP Dashboard |
+| [appsisten-employee-pwa](../appsisten-employee-pwa) | Employee Mobile App |
+| [nestjs-ddd-trst](../nestjs-ddd-trst) | Backend API |
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Proprietary - Solvr Asia

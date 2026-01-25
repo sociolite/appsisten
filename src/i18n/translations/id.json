@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Appsisten - ERP Berbasis AI untuk UKM Indonesia",
+    "title": "Appsisten - ERP Berbasis AI untuk Bisnis Berkembang",
     "description": "Platform ERP all-in-one dengan otomatisasi AI untuk HR, Keuangan, dan E-commerce."
   },
   "nav": {
@@ -19,15 +19,15 @@
       "primary": "Coba Gratis",
       "secondary": "Lihat Demo"
     },
-    "trust": "Tanpa kartu kredit • Setup dalam 5 menit"
+    "trust": "Tanpa kartu kredit • Setup cepat"
   },
   "logoMarquee": {
-    "title": "Dipercaya oleh perusahaan terkemuka Indonesia"
+    "title": "Dipercaya oleh perusahaan terkemuka"
   },
   "socialProof": {
-    "businesses": "3+ bisnis",
-    "employees": "50+ karyawan",
-    "attendances": "10jt+ absensi diproses"
+    "businesses": "Bisnis berkembang",
+    "employees": "Ribuan karyawan",
+    "attendances": "Jutaan absensi diproses"
   },
   "ai": {
     "sectionTitle": "Kenalan dengan Asisten AI Bisnis Anda",
@@ -39,7 +39,7 @@
       },
       "payroll": {
         "title": "Hitung Gaji Otomatis",
-        "description": "AI menghitung gaji, pajak, BPJS, dan potongan tanpa kesalahan"
+        "description": "AI menghitung gaji, pajak, tunjangan, dan potongan tanpa kesalahan"
       },
       "insights": {
         "title": "Insight Bisnis",
@@ -61,7 +61,7 @@
   },
   "features": {
     "sectionTitle": "Semua yang Anda Butuhkan untuk Mengelola Bisnis",
-    "sectionSubtitle": "Solusi ERP lengkap yang dibangun untuk bisnis Indonesia",
+    "sectionSubtitle": "Solusi ERP lengkap yang dibangun untuk bisnis berkembang",
     "hr": {
       "title": "Manajemen HR",
       "description": "Database karyawan, absensi GPS, cuti, dan penilaian kinerja"
@@ -72,7 +72,7 @@
     },
     "commerce": {
       "title": "Integrasi E-commerce",
-      "description": "Hubungkan Tokopedia, Shopee, Lazada dan kelola semua pesanan dalam satu tempat"
+      "description": "Hubungkan marketplace dan kelola semua pesanan dalam satu tempat"
     },
     "mobile": {
       "title": "Aplikasi Mobile",
@@ -139,26 +139,38 @@
     "noCard": "Tidak perlu kartu kredit untuk trial gratis"
   },
   "testimonials": {
-    "sectionTitle": "Dipercaya 500+ Bisnis Indonesia",
+    "sectionTitle": "Dipercaya Bisnis",
     "sectionSubtitle": "Lihat apa kata pelanggan kami",
     "items": [
       {
-        "quote": "Fitur AI absensi mendeteksi 3 karyawan yang memalsukan lokasi. Menghemat jutaan rupiah dari klaim lembur palsu.",
-        "author": "Budi Santoso",
+        "quote": "Fitur AI absensi mendeteksi karyawan yang memalsukan lokasi. Menghemat banyak dari klaim lembur palsu.",
+        "author": "Sarah Chen",
         "role": "HR Manager",
-        "company": "PT Maju Bersama"
+        "company": "Kharismaworld"
       },
       {
-        "quote": "Payroll yang biasanya 2 hari sekarang hanya 10 menit. AI menangani semua perhitungan secara otomatis.",
-        "author": "Siti Rahayu",
+        "quote": "Payroll yang biasanya berhari-hari sekarang hanya hitungan menit. AI menangani semua perhitungan secara otomatis.",
+        "author": "Michael Wong",
         "role": "Finance Director",
-        "company": "CV Sukses Mandiri"
+        "company": "SPPG"
       },
       {
         "quote": "Akhirnya, satu platform yang menangani semua toko kami. Integrasi e-commerce-nya mulus.",
-        "author": "Ahmad Wijaya",
+        "author": "Lisa Tan",
         "role": "CEO",
-        "company": "Toko Makmur Group"
+        "company": "Dus Kemasan Cantik"
+      },
+      {
+        "quote": "Aplikasi mobile mengubah cara tim kami mengelola absensi. Sederhana tapi powerful.",
+        "author": "David Lee",
+        "role": "Operations Manager",
+        "company": "Dido Link"
+      },
+      {
+        "quote": "Mengelola banyak cabang jadi mudah. Tracking inventori real-time di semua lokasi.",
+        "author": "Ahmad Rahman",
+        "role": "Branch Manager",
+        "company": "Merdeka Fotocopy"
       }
     ]
   },
@@ -194,12 +206,12 @@
   },
   "cta": {
     "title": "Siap Biarkan AI Mengelola Bisnis Anda?",
-    "subtitle": "Bergabung dengan 500+ bisnis Indonesia yang sudah menghemat 10+ jam per minggu",
+    "subtitle": "Bergabung dengan bisnis yang sudah menghemat waktu setiap minggu",
     "primary": "Coba Gratis Sekarang",
     "secondary": "Jadwalkan Demo"
   },
   "footer": {
-    "tagline": "ERP Berbasis AI untuk Bisnis Indonesia",
+    "tagline": "ERP Berbasis AI untuk Bisnis Berkembang",
     "product": "Produk",
     "company": "Perusahaan",
     "resources": "Sumber Daya",

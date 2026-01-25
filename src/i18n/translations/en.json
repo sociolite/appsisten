@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Appsisten - AI-Powered ERP for Indonesian SMBs",
+    "title": "Appsisten - AI-Powered ERP for Growing Businesses",
     "description": "All-in-one ERP platform with AI automation for HR, Finance, and E-commerce."
   },
   "nav": {
@@ -19,15 +19,15 @@
       "primary": "Start Free Trial",
       "secondary": "Watch Demo"
     },
-    "trust": "No credit card required • Setup in 5 minutes"
+    "trust": "No credit card required • Quick setup"
   },
   "logoMarquee": {
-    "title": "Trusted by leading Indonesian enterprises"
+    "title": "Trusted by leading enterprises"
   },
   "socialProof": {
-    "businesses": "500+ businesses",
-    "employees": "50,000+ employees",
-    "attendances": "10M+ attendances processed"
+    "businesses": "Growing businesses",
+    "employees": "Thousands of employees",
+    "attendances": "Millions of attendances processed"
   },
   "ai": {
     "sectionTitle": "Meet Your AI Business Assistants",
@@ -39,7 +39,7 @@
       },
       "payroll": {
         "title": "Auto Payroll Calculation",
-        "description": "AI calculates salaries, taxes, BPJS, and deductions with zero errors"
+        "description": "AI calculates salaries, taxes, benefits, and deductions with zero errors"
       },
       "insights": {
         "title": "Business Insights",
@@ -61,7 +61,7 @@
   },
   "features": {
     "sectionTitle": "Everything You Need to Run Your Business",
-    "sectionSubtitle": "A complete ERP solution built for Indonesian businesses",
+    "sectionSubtitle": "A complete ERP solution built for growing businesses",
     "hr": {
       "title": "HR Management",
       "description": "Employee database, attendance with GPS, leave management, and performance reviews"
@@ -72,7 +72,7 @@
     },
     "commerce": {
       "title": "E-commerce Integration",
-      "description": "Connect Tokopedia, Shopee, Lazada and manage all orders in one place"
+      "description": "Connect your marketplaces and manage all orders in one place"
     },
     "mobile": {
       "title": "Mobile App",
@@ -114,7 +114,7 @@
         "price": "35,000",
         "description": "Full HR & Payroll solution",
         "cta": "Try 14 Days",
-        "includes": ["All Starter features", "Payroll & Tax", "BPJS Integration", "Shift Management", "Performance Reviews", "Recruitment"],
+        "includes": ["All Starter features", "Payroll & Tax", "Benefits Integration", "Shift Management", "Performance Reviews", "Recruitment"],
         "employees": "Per employee/month"
       }
     },
@@ -126,7 +126,7 @@
         { "name": "Leave & Overtime", "price": "5,000", "description": "Leave requests, policies, calendar & overtime tracking", "category": "hr" },
         { "name": "Shift Management", "price": "4,000", "description": "Shift scheduling, templates & multi-shift assignment", "category": "hr" },
         { "name": "Payroll & Tax", "price": "12,000", "description": "Auto payroll, PPh 21, payslips & bank transfer", "category": "payroll" },
-        { "name": "BPJS Integration", "price": "3,000", "description": "BPJS Health & Employment auto-calculation", "category": "payroll" },
+        { "name": "Benefits Integration", "price": "3,000", "description": "Health & employment benefits auto-calculation", "category": "payroll" },
         { "name": "Performance Management", "price": "6,000", "description": "Reviews, KPI tracking & 360° feedback", "category": "hr" },
         { "name": "Recruitment", "price": "5,000", "description": "Job posting, applicant tracking & career page", "category": "hr" },
         { "name": "Finance Module", "price": "6,000", "description": "Reimbursement, cash advance & expense tracking", "category": "finance" },
@@ -139,26 +139,38 @@
     "noCard": "No credit card required for free trial"
   },
   "testimonials": {
-    "sectionTitle": "Trusted by 500+ Indonesian Businesses",
+    "sectionTitle": "Trusted by Businesses",
     "sectionSubtitle": "See what our customers have to say",
     "items": [
       {
-        "quote": "The AI attendance feature caught 3 employees faking their location. Saved us millions in false overtime claims.",
-        "author": "Budi Santoso",
+        "quote": "The AI attendance feature caught employees faking their location. Saved us significantly in false overtime claims.",
+        "author": "Sarah Chen",
         "role": "HR Manager",
-        "company": "PT Maju Bersama"
+        "company": "Kharismaworld"
       },
       {
-        "quote": "Payroll that used to take 2 days now takes 10 minutes. The AI handles all the calculations automatically.",
-        "author": "Siti Rahayu",
+        "quote": "Payroll that used to take days now takes minutes. The AI handles all the calculations automatically.",
+        "author": "Michael Wong",
         "role": "Finance Director",
-        "company": "CV Sukses Mandiri"
+        "company": "SPPG"
       },
       {
         "quote": "Finally, one platform that handles all our stores. The e-commerce integration is seamless.",
-        "author": "Ahmad Wijaya",
+        "author": "Lisa Tan",
         "role": "CEO",
-        "company": "Toko Makmur Group"
+        "company": "Dus Kemasan Cantik"
+      },
+      {
+        "quote": "The mobile app transformed how our team manages attendance. Simple yet powerful.",
+        "author": "David Lee",
+        "role": "Operations Manager",
+        "company": "Dido Link"
+      },
+      {
+        "quote": "Managing multiple branches is now effortless. Real-time inventory tracking across all locations.",
+        "author": "Ahmad Rahman",
+        "role": "Branch Manager",
+        "company": "Merdeka Fotocopy"
       }
     ]
   },
@@ -171,8 +183,8 @@
         "answer": "Appsisten AI automatically detects fake GPS, unusual attendance patterns, and location anomalies. The system compares location data with history and provides real-time alerts if fraud is detected."
       },
       {
-        "question": "Does payroll calculation include tax and BPJS?",
-        "answer": "Yes, our system automatically calculates PPh 21, BPJS Health, BPJS Employment, THR, and all salary components according to the latest Indonesian regulations. Digital payslips are sent directly to employees."
+        "question": "Does payroll calculation include tax and benefits?",
+        "answer": "Yes, our system automatically calculates income tax, health benefits, employment benefits, bonuses, and all salary components according to local regulations. Digital payslips are sent directly to employees."
       },
       {
         "question": "Can employees request leave and overtime via mobile?",
@@ -184,7 +196,7 @@
       },
       {
         "question": "What's the pricing and is there a free trial?",
-        "answer": "Starting from FREE for up to 5 employees. Paid plans start at Rp299k/month. All paid plans include a 14-day free trial without credit card."
+        "answer": "Starting from FREE for up to 5 employees. Contact us for paid plan pricing. All paid plans include a 14-day free trial without credit card."
       },
       {
         "question": "Is there a discount for annual payment?",
@@ -194,12 +206,12 @@
   },
   "cta": {
     "title": "Ready to Let AI Run Your Business?",
-    "subtitle": "Join 500+ Indonesian businesses already saving 10+ hours per week",
+    "subtitle": "Join businesses already saving hours every week",
     "primary": "Start Free Trial",
     "secondary": "Schedule a Demo"
   },
   "footer": {
-    "tagline": "AI-Powered ERP for Indonesian Businesses",
+    "tagline": "AI-Powered ERP for Growing Businesses",
     "product": "Product",
     "company": "Company",
     "resources": "Resources",
