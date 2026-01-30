@@ -11,7 +11,7 @@ export const GridPattern = ({ className = '' }: GridPatternProps) => {
     target: ref,
     offset: ['start start', 'end start'],
   });
-  
+
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0.4, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 

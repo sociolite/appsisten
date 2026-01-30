@@ -114,25 +114,92 @@
         "price": "35,000",
         "description": "Full HR & Payroll solution",
         "cta": "Try 14 Days",
-        "includes": ["All Starter features", "Payroll & Tax", "Benefits Integration", "Shift Management", "Performance Reviews", "Recruitment"],
+        "includes": [
+          "All Starter features",
+          "Payroll & Tax",
+          "Benefits Integration",
+          "Shift Management",
+          "Performance Reviews",
+          "Recruitment"
+        ],
         "employees": "Per employee/month"
       }
     },
     "modules": {
       "title": "Available Modules",
       "items": [
-        { "name": "GPS Attendance", "price": "5,000", "description": "Clock in/out with GPS validation & anti-fake detection", "category": "hr" },
-        { "name": "Facial Recognition", "price": "8,000", "description": "Biometric attendance with face verification", "category": "hr" },
-        { "name": "Leave & Overtime", "price": "5,000", "description": "Leave requests, policies, calendar & overtime tracking", "category": "hr" },
-        { "name": "Shift Management", "price": "4,000", "description": "Shift scheduling, templates & multi-shift assignment", "category": "hr" },
-        { "name": "Payroll & Tax", "price": "12,000", "description": "Auto payroll, PPh 21, payslips & bank transfer", "category": "payroll" },
-        { "name": "Benefits Integration", "price": "3,000", "description": "Health & employment benefits auto-calculation", "category": "payroll" },
-        { "name": "Performance Management", "price": "6,000", "description": "Reviews, KPI tracking & 360° feedback", "category": "hr" },
-        { "name": "Recruitment", "price": "5,000", "description": "Job posting, applicant tracking & career page", "category": "hr" },
-        { "name": "Finance Module", "price": "6,000", "description": "Reimbursement, cash advance & expense tracking", "category": "finance" },
-        { "name": "Inventory", "price": "8,000", "description": "Stock tracking, multi-warehouse & stock opname", "category": "operations" },
-        { "name": "CRM", "price": "8,000", "description": "Customer database, leads, deals & membership", "category": "operations" },
-        { "name": "AI Assistant", "price": "10,000", "description": "AI-powered insights, anomaly detection & chatbot", "category": "ai" }
+        {
+          "name": "GPS Attendance",
+          "price": "5,000",
+          "description": "Clock in/out with GPS validation & anti-fake detection",
+          "category": "hr"
+        },
+        {
+          "name": "Facial Recognition",
+          "price": "8,000",
+          "description": "Biometric attendance with face verification",
+          "category": "hr"
+        },
+        {
+          "name": "Leave & Overtime",
+          "price": "5,000",
+          "description": "Leave requests, policies, calendar & overtime tracking",
+          "category": "hr"
+        },
+        {
+          "name": "Shift Management",
+          "price": "4,000",
+          "description": "Shift scheduling, templates & multi-shift assignment",
+          "category": "hr"
+        },
+        {
+          "name": "Payroll & Tax",
+          "price": "12,000",
+          "description": "Auto payroll, PPh 21, payslips & bank transfer",
+          "category": "payroll"
+        },
+        {
+          "name": "Benefits Integration",
+          "price": "3,000",
+          "description": "Health & employment benefits auto-calculation",
+          "category": "payroll"
+        },
+        {
+          "name": "Performance Management",
+          "price": "6,000",
+          "description": "Reviews, KPI tracking & 360° feedback",
+          "category": "hr"
+        },
+        {
+          "name": "Recruitment",
+          "price": "5,000",
+          "description": "Job posting, applicant tracking & career page",
+          "category": "hr"
+        },
+        {
+          "name": "Finance Module",
+          "price": "6,000",
+          "description": "Reimbursement, cash advance & expense tracking",
+          "category": "finance"
+        },
+        {
+          "name": "Inventory",
+          "price": "8,000",
+          "description": "Stock tracking, multi-warehouse & stock opname",
+          "category": "operations"
+        },
+        {
+          "name": "CRM",
+          "price": "8,000",
+          "description": "Customer database, leads, deals & membership",
+          "category": "operations"
+        },
+        {
+          "name": "AI Assistant",
+          "price": "10,000",
+          "description": "AI-powered insights, anomaly detection & chatbot",
+          "category": "ai"
+        }
       ]
     },
     "guarantee": "Cancel anytime",

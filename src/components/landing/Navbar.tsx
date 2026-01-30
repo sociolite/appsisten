@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -11,37 +11,33 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t("nav.features"), href: "#ai-features" },
-    { name: t("nav.pricing"), href: "#pricing" },
-    { name: "FAQ", href: "#faq" },
+    { name: t('nav.features'), href: '#ai-features' },
+    { name: t('nav.pricing'), href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
   ];
 
-  const scrollToSection = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault();
-      const targetId = href.replace("#", "");
-      const element = document.getElementById(targetId);
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
 
-      if (element) {
-        const offsetTop =
-          element.getBoundingClientRect().top + window.scrollY - 100;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
-      }
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
 
-      setIsMobileMenuOpen(false);
-    },
-    [],
-  );
+    setIsMobileMenuOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -53,12 +49,10 @@ export const Navbar = () => {
     >
       <motion.div
         animate={{
-          backgroundColor: isScrolled
-            ? "rgba(255, 255, 255, 0.95)"
-            : "rgba(255, 255, 255, 0.8)",
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
           boxShadow: isScrolled
-            ? "0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)"
-            : "none",
+            ? '0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)'
+            : 'none',
         }}
         transition={{ duration: 0.3 }}
         className="backdrop-blur-xl px-4 lg:px-8"
@@ -76,7 +70,7 @@ export const Navbar = () => {
               alt="Appsisten"
               className="h-8 w-auto"
               whileHover={{ rotate: 5 }}
-              transition={{ type: "spring", stiffness: 400 }}
+              transition={{ type: 'spring', stiffness: 400 }}
             />
           </motion.a>
 
@@ -109,7 +103,7 @@ export const Navbar = () => {
                 size="sm"
                 className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5"
               >
-                {t("nav.getStarted")}
+                {t('nav.getStarted')}
               </Button>
             </motion.div>
           </div>
@@ -176,10 +170,10 @@ export const Navbar = () => {
                   <LanguageSwitcher />
                 </div>
                 <Button variant="ghost" className="w-full justify-center">
-                  {t("nav.login")}
+                  {t('nav.login')}
                 </Button>
                 <Button className="w-full bg-primary text-white rounded-xl">
-                  {t("nav.getStarted")}
+                  {t('nav.getStarted')}
                 </Button>
               </div>
             </div>

@@ -36,19 +36,13 @@ export const AnimatedRecruiterIcon = ({ className, isHovered }: AnimatedIconProp
         cx="18"
         cy="11"
         r="3"
-        animate={{ 
+        animate={{
           scale: isHovered ? [1, 1.2, 1] : 1,
-          opacity: [0.8, 1, 0.8]
+          opacity: [0.8, 1, 0.8],
         }}
         transition={{ duration: 1.5, repeat: Infinity }}
       />
-      <motion.line
-        x1="20.5"
-        y1="13.5"
-        x2="22"
-        y2="15"
-        strokeWidth="2"
-      />
+      <motion.line x1="20.5" y1="13.5" x2="22" y2="15" strokeWidth="2" />
       {/* Scanning line */}
       <motion.line
         x1="16"
@@ -57,12 +51,12 @@ export const AnimatedRecruiterIcon = ({ className, isHovered }: AnimatedIconProp
         y2="9"
         stroke="currentColor"
         strokeOpacity={0.6}
-        animate={{ 
+        animate={{
           y1: [9, 13, 9],
           y2: [9, 13, 9],
-          opacity: [0.3, 0.8, 0.3]
+          opacity: [0.3, 0.8, 0.3],
         }}
-        transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
       />
     </motion.svg>
   );
@@ -96,9 +90,9 @@ export const AnimatedAssistantIcon = ({ className, isHovered }: AnimatedIconProp
         cy="12"
         r="1.5"
         fill="currentColor"
-        animate={{ 
+        animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.7, 1, 0.7]
+          opacity: [0.7, 1, 0.7],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
       />
@@ -108,28 +102,23 @@ export const AnimatedAssistantIcon = ({ className, isHovered }: AnimatedIconProp
         cy="12"
         r="1.5"
         fill="currentColor"
-        animate={{ 
+        animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.7, 1, 0.7]
+          opacity: [0.7, 1, 0.7],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
       />
       {/* Antenna */}
-      <motion.line
-        x1="12"
-        y1="6"
-        x2="12"
-        y2="3"
-      />
+      <motion.line x1="12" y1="6" x2="12" y2="3" />
       {/* Antenna tip */}
       <motion.circle
         cx="12"
         cy="2"
         r="1"
         fill="currentColor"
-        animate={{ 
+        animate={{
           scale: [1, 1.5, 1],
-          opacity: [0.5, 1, 0.5]
+          opacity: [0.5, 1, 0.5],
         }}
         transition={{ duration: 0.8, repeat: Infinity }}
       />
@@ -137,18 +126,18 @@ export const AnimatedAssistantIcon = ({ className, isHovered }: AnimatedIconProp
       <motion.path
         d="M8 2.5C9 1.5 11 1 12 1"
         strokeOpacity={0.5}
-        animate={{ 
+        animate={{
           pathLength: [0, 1, 0],
-          opacity: [0, 0.6, 0]
+          opacity: [0, 0.6, 0],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
       />
       <motion.path
         d="M16 2.5C15 1.5 13 1 12 1"
         strokeOpacity={0.5}
-        animate={{ 
+        animate={{
           pathLength: [0, 1, 0],
-          opacity: [0, 0.6, 0]
+          opacity: [0, 0.6, 0],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
       />
@@ -175,9 +164,7 @@ export const AnimatedDocumentIcon = ({ className, isHovered }: AnimatedIconProps
         transition={{ duration: 0.3 }}
       />
       {/* Fold corner */}
-      <motion.polyline
-        points="14 2 14 8 20 8"
-      />
+      <motion.polyline points="14 2 14 8 20 8" />
       {/* Text lines */}
       <motion.line x1="8" y1="13" x2="16" y2="13" strokeOpacity={0.6} />
       <motion.line x1="8" y1="17" x2="14" y2="17" strokeOpacity={0.6} />
@@ -190,11 +177,11 @@ export const AnimatedDocumentIcon = ({ className, isHovered }: AnimatedIconProps
         fill="currentColor"
         fillOpacity={0.2}
         stroke="none"
-        animate={{ 
+        animate={{
           y: [10, 18, 10],
-          opacity: [0.1, 0.4, 0.1]
+          opacity: [0.1, 0.4, 0.1],
         }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       />
       {/* AI sparkle */}
       <motion.circle
@@ -204,9 +191,9 @@ export const AnimatedDocumentIcon = ({ className, isHovered }: AnimatedIconProps
         fill="currentColor"
         fillOpacity={0.3}
         stroke="none"
-        animate={{ 
+        animate={{
           scale: [0.8, 1.2, 0.8],
-          opacity: [0.3, 0.7, 0.3]
+          opacity: [0.3, 0.7, 0.3],
         }}
         transition={{ duration: 1.2, repeat: Infinity }}
       />
@@ -239,8 +226,8 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         cx="12"
         cy="4"
         r="2"
-        animate={{ 
-          opacity: [0.5, 1, 0.5]
+        animate={{
+          opacity: [0.5, 1, 0.5],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
       />
@@ -249,8 +236,8 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         cx="5"
         cy="18"
         r="2"
-        animate={{ 
-          opacity: [0.5, 1, 0.5]
+        animate={{
+          opacity: [0.5, 1, 0.5],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
       />
@@ -259,8 +246,8 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         cx="19"
         cy="18"
         r="2"
-        animate={{ 
-          opacity: [0.5, 1, 0.5]
+        animate={{
+          opacity: [0.5, 1, 0.5],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
       />
@@ -270,9 +257,9 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         y1="9"
         x2="12"
         y2="6"
-        animate={{ 
+        animate={{
           pathLength: [0.5, 1, 0.5],
-          opacity: [0.3, 0.8, 0.3]
+          opacity: [0.3, 0.8, 0.3],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
       />
@@ -281,9 +268,9 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         y1="14"
         x2="6.5"
         y2="16.5"
-        animate={{ 
+        animate={{
           pathLength: [0.5, 1, 0.5],
-          opacity: [0.3, 0.8, 0.3]
+          opacity: [0.3, 0.8, 0.3],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
       />
@@ -292,9 +279,9 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         y1="14"
         x2="17.5"
         y2="16.5"
-        animate={{ 
+        animate={{
           pathLength: [0.5, 1, 0.5],
-          opacity: [0.3, 0.8, 0.3]
+          opacity: [0.3, 0.8, 0.3],
         }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
       />
@@ -304,9 +291,9 @@ export const AnimatedWorkflowIcon = ({ className, isHovered }: AnimatedIconProps
         cy="7"
         r="0.5"
         fill="currentColor"
-        animate={{ 
+        animate={{
           cy: [9, 6, 9],
-          opacity: [0, 1, 0]
+          opacity: [0, 1, 0],
         }}
         transition={{ duration: 1, repeat: Infinity }}
       />

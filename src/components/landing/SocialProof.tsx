@@ -1,25 +1,25 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Building2, Users, Clock } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Building2, Users, Clock } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export const SocialProof = () => {
   const { t } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const stats = [
     {
       icon: Building2,
-      value: t("socialProof.businesses"),
+      value: t('socialProof.businesses'),
     },
     {
       icon: Users,
-      value: t("socialProof.employees"),
+      value: t('socialProof.employees'),
     },
     {
       icon: Clock,
-      value: t("socialProof.attendances"),
+      value: t('socialProof.attendances'),
     },
   ];
 

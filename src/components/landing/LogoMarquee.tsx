@@ -4,23 +4,23 @@ import { useLanguage } from '@/i18n/LanguageContext';
 const logos = [
   {
     name: 'Kharismaworld',
-    logo: 'https://kharismaworld.co.id/Logo.png'
+    logo: 'https://kharismaworld.co.id/Logo.png',
   },
   {
     name: 'Dus Kemasan Cantik',
-    logo: '/logo/dus-kemasan-cantik.png'
+    logo: '/logo/dus-kemasan-cantik.png',
   },
   {
     name: 'SPPG',
-    logo: 'https://www.bgn.go.id/BGN_LOGO.png'
+    logo: 'https://www.bgn.go.id/BGN_LOGO.png',
   },
   {
     name: 'Dido Link',
-    logo: '/logo/dido-link.png'
+    logo: '/logo/dido-link.png',
   },
   {
     name: 'Merdeka Fotocopy',
-    logo: '/logo/merdeka-fc.png'
+    logo: '/logo/merdeka-fc.png',
   },
 ];
 
@@ -34,12 +34,12 @@ export const LogoMarquee = () => {
           {t('logoMarquee.title')}
         </p>
       </div>
-      
+
       <div className="relative">
         {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-muted/20 via-muted/20 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-muted/20 via-muted/20 to-transparent z-10 pointer-events-none" />
-        
+
         {/* Marquee container */}
         <div className="flex">
           <motion.div
@@ -59,11 +59,7 @@ export const LogoMarquee = () => {
                 key={index}
                 className="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 cursor-default"
               >
-                <img
-                  src={logo.logo}
-                  alt={logo.name}
-                  className="h-12 w-auto object-contain"
-                />
+                <img src={logo.logo} alt={logo.name} className="h-12 w-auto object-contain" />
               </div>
             ))}
           </motion.div>

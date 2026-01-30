@@ -10,7 +10,7 @@ export const Spotlight = ({ className = '', size = 400 }: SpotlightProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const springX = useSpring(mouseX, { stiffness: 300, damping: 30 });
   const springY = useSpring(mouseY, { stiffness: 300, damping: 30 });
 
@@ -28,7 +28,10 @@ export const Spotlight = ({ className = '', size = 400 }: SpotlightProps) => {
   }, [mouseX, mouseY]);
 
   return (
-    <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+    <div
+      ref={containerRef}
+      className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}
+    >
       <motion.div
         className="absolute rounded-full bg-primary/[0.08] blur-3xl"
         style={{

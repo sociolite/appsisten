@@ -32,14 +32,14 @@ export const Pricing = () => {
 
   // Get unique categories from modules
   const categories = useMemo(() => {
-    const cats = new Set(modules.map(m => m.category));
+    const cats = new Set(modules.map((m) => m.category));
     return Array.from(cats);
   }, [modules]);
 
   // Filter modules by active category
   const filteredModules = useMemo(() => {
     if (!activeCategory) return modules;
-    return modules.filter(m => m.category === activeCategory);
+    return modules.filter((m) => m.category === activeCategory);
   }, [modules, activeCategory]);
 
   const parsePrice = (price: string) => parseInt(price.replace(/[.,]/g, ''));
@@ -55,12 +55,12 @@ export const Pricing = () => {
   };
 
   const adjustEmployees = (delta: number) => {
-    setEmployeeCount(prev => Math.max(1, Math.min(500, prev + delta)));
+    setEmployeeCount((prev) => Math.max(1, Math.min(500, prev + delta)));
   };
 
   const { totalPerEmployee, totalMonthly, totalYearly, savings } = useMemo(() => {
     let perEmployee = 0;
-    selectedModules.forEach(index => {
+    selectedModules.forEach((index) => {
       if (modules[index]) {
         perEmployee += parsePrice(modules[index].price);
       }
@@ -86,7 +86,7 @@ export const Pricing = () => {
   // Determine recommended bundle based on selected modules
   const getRecommendation = () => {
     const selected = Array.from(selectedModules);
-    const selectedCategories = new Set(selected.map(i => modules[i]?.category).filter(Boolean));
+    const selectedCategories = new Set(selected.map((i) => modules[i]?.category).filter(Boolean));
 
     // HR Complete: using payroll or multiple categories
     if (selectedCategories.has('payroll') || selectedModules.size >= 4) {
@@ -113,7 +113,10 @@ export const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+    <section
+      id="pricing"
+      className="py-24 lg:py-32 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -130,9 +133,7 @@ export const Pricing = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground">
             {t('pricing.sectionTitle')}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            {t('pricing.sectionSubtitle')}
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground">{t('pricing.sectionSubtitle')}</p>
         </motion.div>
 
         {/* Main Calculator Card */}
@@ -152,7 +153,9 @@ export const Pricing = () => {
                     <Users className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{locale === 'id' ? 'Jumlah Karyawan' : 'Number of Employees'}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {locale === 'id' ? 'Jumlah Karyawan' : 'Number of Employees'}
+                    </p>
                     <div className="flex items-center gap-3 mt-1">
                       <button
                         onClick={() => adjustEmployees(-5)}
@@ -163,7 +166,11 @@ export const Pricing = () => {
                       <input
                         type="number"
                         value={employeeCount}
-                        onChange={(e) => setEmployeeCount(Math.max(1, Math.min(500, parseInt(e.target.value) || 1)))}
+                        onChange={(e) =>
+                          setEmployeeCount(
+                            Math.max(1, Math.min(500, parseInt(e.target.value) || 1))
+                          )
+                        }
                         className="w-16 text-center text-2xl font-bold text-foreground bg-transparent border-none focus:outline-none"
                       />
                       <button
@@ -208,7 +215,9 @@ export const Pricing = () => {
             {/* Module Selection */}
             <div className="p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                <p className="text-sm font-medium text-muted-foreground">{t('pricing.modules.title')}</p>
+                <p className="text-sm font-medium text-muted-foreground">
+                  {t('pricing.modules.title')}
+                </p>
 
                 {/* Category Filter */}
                 <div className="flex items-center gap-2 flex-wrap">
@@ -222,7 +231,7 @@ export const Pricing = () => {
                   >
                     {locale === 'id' ? 'Semua' : 'All'}
                   </button>
-                  {categories.map(cat => (
+                  {categories.map((cat) => (
                     <button
                       key={cat}
                       onClick={() => setActiveCategory(cat)}
@@ -233,7 +242,9 @@ export const Pricing = () => {
                       }`}
                     >
                       <span>{categoryLabels[cat]?.icon}</span>
-                      <span>{locale === 'id' ? categoryLabels[cat]?.id : categoryLabels[cat]?.en}</span>
+                      <span>
+                        {locale === 'id' ? categoryLabels[cat]?.id : categoryLabels[cat]?.en}
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -242,7 +253,7 @@ export const Pricing = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {filteredModules.map((module) => {
                   // Find original index for selection tracking
-                  const originalIndex = modules.findIndex(m => m.name === module.name);
+                  const originalIndex = modules.findIndex((m) => m.name === module.name);
                   const isSelected = selectedModules.has(originalIndex);
                   const price = parsePrice(module.price);
                   const displayPrice = isYearly ? Math.round(price * 0.8) : price;
@@ -264,18 +275,23 @@ export const Pricing = () => {
                           <span className="text-sm">{categoryLabels[module.category]?.icon}</span>
                           <h4 className="font-medium text-foreground">{module.name}</h4>
                         </div>
-                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                          isSelected ? 'border-primary bg-primary' : 'border-muted-foreground/30'
-                        }`}>
+                        <div
+                          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                            isSelected ? 'border-primary bg-primary' : 'border-muted-foreground/30'
+                          }`}
+                        >
                           {isSelected && <Check className="w-3 h-3 text-white" />}
                         </div>
                       </div>
                       <p className="text-xs text-muted-foreground mb-3">{module.description}</p>
                       <div className="flex items-baseline gap-1">
                         <span className="text-lg font-bold text-primary">
-                          {t('pricing.currency')}{formatPrice(displayPrice)}
+                          {t('pricing.currency')}
+                          {formatPrice(displayPrice)}
                         </span>
-                        <span className="text-xs text-muted-foreground">{t('pricing.perEmployee')}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {t('pricing.perEmployee')}
+                        </span>
                       </div>
                     </motion.button>
                   );
@@ -297,24 +313,40 @@ export const Pricing = () => {
                 <div className="flex-1 w-full">
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     <div>
-                      <p className="text-xs text-muted-foreground">{locale === 'id' ? 'Per Karyawan' : 'Per Employee'}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {locale === 'id' ? 'Per Karyawan' : 'Per Employee'}
+                      </p>
                       <p className="text-lg font-semibold text-foreground">
-                        {t('pricing.currency')}{formatPrice(isYearly ? Math.round(totalPerEmployee * 0.8) : totalPerEmployee)}
+                        {t('pricing.currency')}
+                        {formatPrice(
+                          isYearly ? Math.round(totalPerEmployee * 0.8) : totalPerEmployee
+                        )}
                       </p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground">
-                        {employeeCount} {locale === 'id' ? 'Karyawan' : 'Employees'} × {isYearly ? (locale === 'id' ? '12 Bulan' : '12 Months') : (locale === 'id' ? '1 Bulan' : '1 Month')}
+                        {employeeCount} {locale === 'id' ? 'Karyawan' : 'Employees'} ×{' '}
+                        {isYearly
+                          ? locale === 'id'
+                            ? '12 Bulan'
+                            : '12 Months'
+                          : locale === 'id'
+                            ? '1 Bulan'
+                            : '1 Month'}
                       </p>
                       <p className="text-lg font-semibold text-foreground">
-                        {t('pricing.currency')}{formatPrice(isYearly ? totalYearly : totalMonthly)}
+                        {t('pricing.currency')}
+                        {formatPrice(isYearly ? totalYearly : totalMonthly)}
                       </p>
                     </div>
                     {isYearly && savings > 0 && (
                       <div>
-                        <p className="text-xs text-muted-foreground">{locale === 'id' ? 'Hemat' : 'You Save'}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {locale === 'id' ? 'Hemat' : 'You Save'}
+                        </p>
                         <p className="text-lg font-semibold text-green-600">
-                          {t('pricing.currency')}{formatPrice(savings)}
+                          {t('pricing.currency')}
+                          {formatPrice(savings)}
                         </p>
                       </div>
                     )}
@@ -341,14 +373,24 @@ export const Pricing = () => {
                 <div className="flex flex-col items-center lg:items-end gap-3">
                   <div className="text-center lg:text-right">
                     <p className="text-sm text-muted-foreground">
-                      Total {isYearly ? (locale === 'id' ? 'Tahunan' : 'Yearly') : (locale === 'id' ? 'Bulanan' : 'Monthly')}
+                      Total{' '}
+                      {isYearly
+                        ? locale === 'id'
+                          ? 'Tahunan'
+                          : 'Yearly'
+                        : locale === 'id'
+                          ? 'Bulanan'
+                          : 'Monthly'}
                     </p>
                     <p className="text-4xl font-heading font-bold text-foreground">
-                      {t('pricing.currency')}{formatPrice(isYearly ? totalYearly : totalMonthly)}
+                      {t('pricing.currency')}
+                      {formatPrice(isYearly ? totalYearly : totalMonthly)}
                     </p>
                     {!isYearly && (
                       <p className="text-xs text-muted-foreground">
-                        {locale === 'id' ? 'atau' : 'or'} {t('pricing.currency')}{formatPrice(totalYearly)}/{locale === 'id' ? 'tahun' : 'year'} ({locale === 'id' ? 'hemat' : 'save'} 20%)
+                        {locale === 'id' ? 'atau' : 'or'} {t('pricing.currency')}
+                        {formatPrice(totalYearly)}/{locale === 'id' ? 'tahun' : 'year'} (
+                        {locale === 'id' ? 'hemat' : 'save'} 20%)
                       </p>
                     )}
                   </div>

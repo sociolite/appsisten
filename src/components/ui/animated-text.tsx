@@ -8,10 +8,15 @@ interface AnimatedTextProps {
   once?: boolean;
 }
 
-export const AnimatedText = ({ text, className = '', delay = 0, once = true }: AnimatedTextProps) => {
+export const AnimatedText = ({
+  text,
+  className = '',
+  delay = 0,
+  once = true,
+}: AnimatedTextProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: '-50px' });
-  
+
   const words = text.split(' ');
 
   return (
@@ -43,7 +48,13 @@ interface AnimatedLettersProps {
   once?: boolean;
 }
 
-export const AnimatedLetters = ({ text, className = '', delay = 0, staggerDelay = 0.03, once = true }: AnimatedLettersProps) => {
+export const AnimatedLetters = ({
+  text,
+  className = '',
+  delay = 0,
+  staggerDelay = 0.03,
+  once = true,
+}: AnimatedLettersProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: '-50px' });
 

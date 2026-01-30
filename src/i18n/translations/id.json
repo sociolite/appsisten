@@ -114,25 +114,92 @@
         "price": "35.000",
         "description": "Solusi HR & Payroll lengkap",
         "cta": "Coba 14 Hari",
-        "includes": ["Semua fitur Starter", "Payroll & Pajak", "Integrasi BPJS", "Manajemen Shift", "Review Performa", "Rekrutmen"],
+        "includes": [
+          "Semua fitur Starter",
+          "Payroll & Pajak",
+          "Integrasi BPJS",
+          "Manajemen Shift",
+          "Review Performa",
+          "Rekrutmen"
+        ],
         "employees": "Per karyawan/bulan"
       }
     },
     "modules": {
       "title": "Modul Tersedia",
       "items": [
-        { "name": "Absensi GPS", "price": "5.000", "description": "Clock in/out dengan validasi GPS & deteksi fake GPS", "category": "hr" },
-        { "name": "Absensi Wajah", "price": "8.000", "description": "Absensi biometrik dengan verifikasi wajah", "category": "hr" },
-        { "name": "Cuti & Lembur", "price": "5.000", "description": "Pengajuan cuti, kebijakan, kalender & lembur", "category": "hr" },
-        { "name": "Manajemen Shift", "price": "4.000", "description": "Penjadwalan shift, template & multi-shift", "category": "hr" },
-        { "name": "Payroll & Pajak", "price": "12.000", "description": "Payroll otomatis, PPh 21, slip gaji & transfer bank", "category": "payroll" },
-        { "name": "Integrasi BPJS", "price": "3.000", "description": "Hitung otomatis BPJS Kesehatan & Ketenagakerjaan", "category": "payroll" },
-        { "name": "Manajemen Performa", "price": "6.000", "description": "Review, tracking KPI & feedback 360°", "category": "hr" },
-        { "name": "Rekrutmen", "price": "5.000", "description": "Posting lowongan, tracking pelamar & halaman karir", "category": "hr" },
-        { "name": "Modul Keuangan", "price": "6.000", "description": "Reimbursement, kasbon & tracking pengeluaran", "category": "finance" },
-        { "name": "Inventori", "price": "8.000", "description": "Tracking stok, multi-gudang & stock opname", "category": "operations" },
-        { "name": "CRM", "price": "8.000", "description": "Database pelanggan, leads, deals & membership", "category": "operations" },
-        { "name": "Asisten AI", "price": "10.000", "description": "Insight berbasis AI, deteksi anomali & chatbot", "category": "ai" }
+        {
+          "name": "Absensi GPS",
+          "price": "5.000",
+          "description": "Clock in/out dengan validasi GPS & deteksi fake GPS",
+          "category": "hr"
+        },
+        {
+          "name": "Absensi Wajah",
+          "price": "8.000",
+          "description": "Absensi biometrik dengan verifikasi wajah",
+          "category": "hr"
+        },
+        {
+          "name": "Cuti & Lembur",
+          "price": "5.000",
+          "description": "Pengajuan cuti, kebijakan, kalender & lembur",
+          "category": "hr"
+        },
+        {
+          "name": "Manajemen Shift",
+          "price": "4.000",
+          "description": "Penjadwalan shift, template & multi-shift",
+          "category": "hr"
+        },
+        {
+          "name": "Payroll & Pajak",
+          "price": "12.000",
+          "description": "Payroll otomatis, PPh 21, slip gaji & transfer bank",
+          "category": "payroll"
+        },
+        {
+          "name": "Integrasi BPJS",
+          "price": "3.000",
+          "description": "Hitung otomatis BPJS Kesehatan & Ketenagakerjaan",
+          "category": "payroll"
+        },
+        {
+          "name": "Manajemen Performa",
+          "price": "6.000",
+          "description": "Review, tracking KPI & feedback 360°",
+          "category": "hr"
+        },
+        {
+          "name": "Rekrutmen",
+          "price": "5.000",
+          "description": "Posting lowongan, tracking pelamar & halaman karir",
+          "category": "hr"
+        },
+        {
+          "name": "Modul Keuangan",
+          "price": "6.000",
+          "description": "Reimbursement, kasbon & tracking pengeluaran",
+          "category": "finance"
+        },
+        {
+          "name": "Inventori",
+          "price": "8.000",
+          "description": "Tracking stok, multi-gudang & stock opname",
+          "category": "operations"
+        },
+        {
+          "name": "CRM",
+          "price": "8.000",
+          "description": "Database pelanggan, leads, deals & membership",
+          "category": "operations"
+        },
+        {
+          "name": "Asisten AI",
+          "price": "10.000",
+          "description": "Insight berbasis AI, deteksi anomali & chatbot",
+          "category": "ai"
+        }
       ]
     },
     "guarantee": "Batalkan kapan saja",

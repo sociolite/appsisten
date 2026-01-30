@@ -30,32 +30,41 @@ function getNestedValue(obj: unknown, path: string): unknown {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('en');
 
-  const t = useCallback((key: string): string => {
-    const value = getNestedValue(translations[locale], key);
-    if (typeof value === 'string') {
-      return value;
-    }
-    console.warn(`Translation key "${key}" not found or not a string`);
-    return key;
-  }, [locale]);
+  const t = useCallback(
+    (key: string): string => {
+      const value = getNestedValue(translations[locale], key);
+      if (typeof value === 'string') {
+        return value;
+      }
+      console.warn(`Translation key "${key}" not found or not a string`);
+      return key;
+    },
+    [locale]
+  );
 
-  const tArray = useCallback(<T,>(key: string): T[] => {
-    const value = getNestedValue(translations[locale], key);
-    if (Array.isArray(value)) {
-      return value as T[];
-    }
-    console.warn(`Translation key "${key}" not found or not an array`);
-    return [];
-  }, [locale]);
+  const tArray = useCallback(
+    <T,>(key: string): T[] => {
+      const value = getNestedValue(translations[locale], key);
+      if (Array.isArray(value)) {
+        return value as T[];
+      }
+      console.warn(`Translation key "${key}" not found or not an array`);
+      return [];
+    },
+    [locale]
+  );
 
-  const tObject = useCallback(<T,>(key: string): T => {
-    const value = getNestedValue(translations[locale], key);
-    if (value && typeof value === 'object') {
-      return value as T;
-    }
-    console.warn(`Translation key "${key}" not found or not an object`);
-    return {} as T;
-  }, [locale]);
+  const tObject = useCallback(
+    <T,>(key: string): T => {
+      const value = getNestedValue(translations[locale], key);
+      if (value && typeof value === 'object') {
+        return value as T;
+      }
+      console.warn(`Translation key "${key}" not found or not an object`);
+      return {} as T;
+    },
+    [locale]
+  );
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t, tArray, tObject }}>

@@ -18,7 +18,7 @@ const socialLinks = [
 
 export const Footer = () => {
   const footerRef = useRef(null);
-  const isInView = useInView(footerRef, { once: true, margin: "-50px" });
+  const isInView = useInView(footerRef, { once: true, margin: '-50px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,7 +36,7 @@ export const Footer = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring" as const, stiffness: 300, damping: 24 },
+      transition: { type: 'spring' as const, stiffness: 300, damping: 24 },
     },
   };
 
@@ -47,7 +47,7 @@ export const Footer = () => {
           className="mx-auto max-w-4xl"
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isInView ? 'visible' : 'hidden'}
         >
           {/* Floating Glass Card */}
           <motion.div
@@ -56,7 +56,7 @@ export const Footer = () => {
           >
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
-            
+
             <div className="relative p-6 sm:p-8">
               {/* Top Row: Logo + Links + Social */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -106,9 +106,7 @@ export const Footer = () => {
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <motion.div
-                        className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"
-                      />
+                      <motion.div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                       <social.icon className="w-4 h-4 relative z-10" />
                     </motion.a>
                   ))}
@@ -116,7 +114,7 @@ export const Footer = () => {
               </div>
 
               {/* Divider */}
-              <motion.div 
+              <motion.div
                 className="my-6 h-px bg-gradient-to-r from-transparent via-border to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -125,10 +123,7 @@ export const Footer = () => {
 
               {/* Bottom Row: Copyright + Back to top */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <motion.p 
-                  className="text-xs text-muted-foreground"
-                  variants={itemVariants}
-                >
+                <motion.p className="text-xs text-muted-foreground" variants={itemVariants}>
                   © {new Date().getFullYear()} Appsisten. All rights reserved.
                 </motion.p>
 
@@ -144,7 +139,7 @@ export const Footer = () => {
                   <span>Back to top</span>
                   <motion.div
                     animate={{ y: [0, -3, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
                   >
                     <ArrowUpRight className="w-3.5 h-3.5 rotate-[-45deg]" />
                   </motion.div>

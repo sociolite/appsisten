@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const AnimatedBackground = () => {
   const { scrollYProgress } = useScroll();
-  
+
   // Parallax transforms for floating elements
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -400]);
@@ -16,7 +16,7 @@ export const AnimatedBackground = () => {
       <motion.div
         style={{ y: y1 }}
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
         }}
@@ -25,7 +25,7 @@ export const AnimatedBackground = () => {
       <motion.div
         style={{ y: y2 }}
         className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.15, 1],
           opacity: [0.2, 0.4, 0.2],
         }}
@@ -34,7 +34,7 @@ export const AnimatedBackground = () => {
       <motion.div
         style={{ y: y3 }}
         className="absolute top-2/3 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/[0.02] blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
         }}
@@ -76,7 +76,7 @@ export const AnimatedBackground = () => {
       />
 
       {/* Subtle grid overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.015]"
         style={{
           backgroundImage: `

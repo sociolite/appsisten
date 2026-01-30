@@ -24,7 +24,7 @@ export const NeuralNetwork = () => {
   const nodes = useMemo<Node[]>(() => {
     const nodeList: Node[] = [];
     const nodeCount = 12;
-    
+
     for (let i = 0; i < nodeCount; i++) {
       nodeList.push({
         id: i,
@@ -58,15 +58,11 @@ export const NeuralNetwork = () => {
   }, [nodes]);
 
   return (
-    <motion.div 
+    <motion.div
       style={{ y: networkY, opacity: networkOpacity }}
       className="absolute inset-0 overflow-hidden pointer-events-none"
     >
-      <svg 
-        className="w-full h-full" 
-        viewBox="0 0 100 100" 
-        preserveAspectRatio="xMidYMid slice"
-      >
+      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
         <defs>
           {/* Gradient for connections */}
           <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -74,7 +70,7 @@ export const NeuralNetwork = () => {
             <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
             <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
           </linearGradient>
-          
+
           {/* Glow filter for nodes */}
           <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="0.5" result="blur" />
@@ -100,7 +96,7 @@ export const NeuralNetwork = () => {
               animate={{ pathLength: 1, opacity: 1 }}
               transition={{ duration: 1.5, delay: conn.delay }}
             />
-            
+
             {/* Animated data particle */}
             <motion.circle
               r="0.4"
@@ -117,7 +113,7 @@ export const NeuralNetwork = () => {
                 delay: conn.delay + 1,
                 repeat: Infinity,
                 repeatDelay: 3 + Math.random() * 4,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               }}
             />
           </g>
@@ -146,7 +142,7 @@ export const NeuralNetwork = () => {
                 repeatDelay: 4 + Math.random() * 3,
               }}
             />
-            
+
             {/* Main node */}
             <motion.circle
               cx={node.x}
@@ -155,7 +151,7 @@ export const NeuralNetwork = () => {
               fill="hsl(var(--primary))"
               filter="url(#nodeGlow)"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ 
+              animate={{
                 opacity: [0.4, 0.8, 0.4],
                 scale: [1, 1.1, 1],
               }}
@@ -172,7 +168,7 @@ export const NeuralNetwork = () => {
                 },
               }}
             />
-            
+
             {/* Inner core */}
             <motion.circle
               cx={node.x}
@@ -198,7 +194,7 @@ export const NeuralNetwork = () => {
           }}
           animate={{
             y: [0, -20, 0],
-            x: [0, (i % 2 === 0 ? 10 : -10), 0],
+            x: [0, i % 2 === 0 ? 10 : -10, 0],
             opacity: [0.2, 0.6, 0.2],
             scale: [1, 1.5, 1],
           }}
@@ -206,7 +202,7 @@ export const NeuralNetwork = () => {
             duration: 4 + i * 0.5,
             delay: i * 0.3,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
       ))}
