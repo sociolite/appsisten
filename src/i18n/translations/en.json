@@ -10,8 +10,20 @@
     "login": "Login",
     "getStarted": "Get Started!"
   },
+  "getStartedModal": {
+    "title": "Get started in minutes",
+    "subtitle": "Share your work email and we will set up your account and trial.",
+    "emailLabel": "Work email",
+    "emailPlaceholder": "you@company.com",
+    "submit": "Request access",
+    "submitting": "Sending...",
+    "privacy": "We will only use your email to get you set up.",
+    "successTitle": "Thanks! We will reach out soon.",
+    "successBody": "Check your inbox for next steps and onboarding details.",
+    "error": "We could not submit your request. Please try again."
+  },
   "hero": {
-    "badge": "Powered by AI",
+    "badge": "Powered by Appsisten",
     "title": "Run Your Business with",
     "titleHighlight": "AI-Powered Automation",
     "subtitle": "The modern ERP that thinks for you. Automate HR, finance, and operations with intelligent AI assistants.",

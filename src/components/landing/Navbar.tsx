@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { GetStartedModal } from '@/components/landing/GetStartedModal';
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -99,12 +100,17 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-2">
             <LanguageSwitcher />
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                size="sm"
-                className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5"
-              >
-                {t('nav.getStarted')}
-              </Button>
+              <GetStartedModal
+                location="Navbar"
+                trigger={
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5"
+                  >
+                    {t('nav.getStarted')}
+                  </Button>
+                }
+              />
             </motion.div>
           </div>
 
@@ -172,9 +178,14 @@ export const Navbar = () => {
                 <Button variant="ghost" className="w-full justify-center">
                   {t('nav.login')}
                 </Button>
-                <Button className="w-full bg-primary text-white rounded-xl">
-                  {t('nav.getStarted')}
-                </Button>
+                <GetStartedModal
+                  location="Navbar Mobile"
+                  trigger={
+                    <Button className="w-full bg-primary text-white rounded-xl">
+                      {t('nav.getStarted')}
+                    </Button>
+                  }
+                />
               </div>
             </div>
           </motion.div>

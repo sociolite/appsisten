@@ -7,6 +7,7 @@ import { AnimatedText, AnimatedLetters } from '@/components/ui/animated-text';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { NeuralNetwork } from '@/components/ui/neural-network';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { GetStartedModal } from '@/components/landing/GetStartedModal';
 import heroDashboard from '/screen.png';
 
 const stats = [
@@ -132,21 +133,26 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
-            <MagneticButton strength={0.4}>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group"
-              >
-                {t('hero.cta.primary')}
-                <motion.span
-                  className="ml-2"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.span>
-              </Button>
-            </MagneticButton>
+            <GetStartedModal
+              location="Hero"
+              trigger={
+                <MagneticButton strength={0.4}>
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 h-14 text-base group"
+                  >
+                    {t('hero.cta.primary')}
+                    <motion.span
+                      className="ml-2"
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.span>
+                  </Button>
+                </MagneticButton>
+              }
+            />
             <MagneticButton strength={0.3}>
               <Button
                 variant="outline"

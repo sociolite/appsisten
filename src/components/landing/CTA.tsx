@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { GetStartedModal } from '@/components/landing/GetStartedModal';
 
 export const CTA = () => {
   const { t } = useLanguage();
@@ -55,18 +56,23 @@ export const CTA = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  size="lg"
-                  className="bg-white text-primary hover:bg-white/90 rounded-xl h-14 px-8 text-base group"
-                >
-                  {t('cta.primary')}
-                  <motion.span
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </motion.span>
-                </Button>
+                <GetStartedModal
+                  location="CTA"
+                  trigger={
+                    <Button
+                      size="lg"
+                      className="bg-white text-primary hover:bg-white/90 rounded-xl h-14 px-8 text-base group"
+                    >
+                      {t('cta.primary')}
+                      <motion.span
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </motion.span>
+                    </Button>
+                  }
+                />
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button

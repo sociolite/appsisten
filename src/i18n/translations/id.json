@@ -10,6 +10,18 @@
     "login": "Masuk",
     "getStarted": "Mulai Gratis!"
   },
+  "getStartedModal": {
+    "title": "Mulai dalam hitungan menit",
+    "subtitle": "Masukkan email kerja Anda dan kami akan menyiapkan akun serta trial.",
+    "emailLabel": "Email kerja",
+    "emailPlaceholder": "anda@perusahaan.com",
+    "submit": "Minta akses",
+    "submitting": "Mengirim...",
+    "privacy": "Email Anda hanya digunakan untuk proses pendaftaran.",
+    "successTitle": "Terima kasih! Kami akan menghubungi Anda.",
+    "successBody": "Cek inbox untuk langkah berikutnya dan detail onboarding.",
+    "error": "Permintaan belum berhasil. Silakan coba lagi."
+  },
   "hero": {
     "badge": "Didukung AI",
     "title": "Kelola Bisnis dengan",

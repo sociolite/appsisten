@@ -58,7 +58,7 @@ export const Pricing = () => {
     setEmployeeCount((prev) => Math.max(1, Math.min(500, prev + delta)));
   };
 
-  const { totalPerEmployee, totalMonthly, totalYearly, savings } = useMemo(() => {
+  const { totalPerEmployee, featurePrice, totalMonthly, totalYearly, savings } = useMemo(() => {
     let perEmployee = 0;
     selectedModules.forEach((index) => {
       if (modules[index]) {
@@ -66,13 +66,15 @@ export const Pricing = () => {
       }
     });
 
-    const monthly = perEmployee * employeeCount;
+    const featureFee = perEmployee;
+    const monthly = perEmployee * employeeCount + featureFee;
     const yearly = monthly * 12;
     const yearlyDiscounted = Math.round(yearly * 0.8);
     const savedAmount = yearly - yearlyDiscounted;
 
     return {
       totalPerEmployee: perEmployee,
+      featurePrice: featureFee,
       totalMonthly: monthly,
       totalYearly: yearlyDiscounted,
       savings: savedAmount,
@@ -289,9 +291,6 @@ export const Pricing = () => {
                           {t('pricing.currency')}
                           {formatPrice(displayPrice)}
                         </span>
-                        <span className="text-xs text-muted-foreground">
-                          {t('pricing.perEmployee')}
-                        </span>
                       </div>
                     </motion.button>
                   );
@@ -320,6 +319,17 @@ export const Pricing = () => {
                         {t('pricing.currency')}
                         {formatPrice(
                           isYearly ? Math.round(totalPerEmployee * 0.8) : totalPerEmployee
+                        )}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        {locale === 'id' ? 'Biaya Fitur' : 'Feature Fee'}
+                      </p>
+                      <p className="text-lg font-semibold text-foreground">
+                        {t('pricing.currency')}
+                        {formatPrice(
+                          isYearly ? Math.round(featurePrice * 0.8) : featurePrice
                         )}
                       </p>
                     </div>
