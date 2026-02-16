@@ -71,6 +71,10 @@
       }
     }
   },
+  "integrations": {
+    "title": "Work Seamlessly",
+    "subtitle": "Integrates with SAP, Odoo, Salesforce, or any custom analytics tools. 500++ integrations available."
+  },
   "features": {
     "sectionTitle": "Everything You Need to Run Your Business",
     "sectionSubtitle": "A complete ERP solution built for growing businesses",

@@ -4,6 +4,7 @@ import { Hero } from '@/components/landing/Hero';
 import { LogoMarquee } from '@/components/landing/LogoMarquee';
 import { SocialProof } from '@/components/landing/SocialProof';
 import { AIFeatures } from '@/components/landing/AIFeatures';
+import { Integrations } from '@/components/landing/Integrations';
 import { Features } from '@/components/landing/Features';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { Pricing } from '@/components/landing/Pricing';
@@ -22,6 +23,7 @@ const Index = () => {
         <Hero />
         <LogoMarquee />
         <AIFeatures />
+        <Integrations />
         <Features />
         <Testimonials />
         <Pricing />

@@ -11,32 +11,54 @@ import {
 const features = [
   {
     icon: AnimatedRecruiterIcon,
-    title: 'AI Recruiter',
+    title: 'AI Recruiter Agent',
     description:
-      'Intelligent candidate sourcing and screening. Our AI analyzes resumes, matches skills, and ranks applicants to find your perfect hire.',
-    highlight: 'Smart Hiring',
+      'Automate candidate sourcing, screening, and engagement. Our AI interviews candidates 24/7 and highlights deeper insights.',
+    highlight: 'Most Popular',
   },
   {
     icon: AnimatedAssistantIcon,
-    title: 'AI Personal Assistant',
+    title: 'Intelligent Assistant',
     description:
-      'Your 24/7 intelligent assistant handles scheduling, reminders, and employee queries with natural language understanding.',
+      'A personal AI assistant that understands your business context, manages schedules, handles emails, and prepares meeting briefs.',
     highlight: 'Always On',
+  },
+  {
+    icon: AnimatedDocumentIcon,
+    title: 'Enterprise-Grade Security',
+    description:
+      'Bank-level encryption, role-based access control, and comprehensive audit logs keep your data safe and compliant.',
+    highlight: 'SOC2 Ready',
   },
   {
     icon: AnimatedDocumentIcon,
     title: 'AI Document Processor',
     description:
-      'Automatically extract, classify, and process documents. From contracts to invoices, let AI handle the paperwork.',
-    highlight: 'Zero Manual Work',
+      'Automatically extract data from invoices, contracts, and receipts. Turn unstructured documents into structured data instantly.',
   },
   {
     icon: AnimatedWorkflowIcon,
     title: 'Distributed Workflows',
     description:
       'Orchestrate complex multi-step processes across teams and systems with intelligent task routing and automation.',
-    highlight: 'Coming Soon',
-    comingSoon: true,
+  },
+  {
+    icon: AnimatedRecruiterIcon,
+    title: 'Predictive Analytics',
+    description:
+      'Forecast trends and identify opportunities with AI that analyzes your historical data and market signals.',
+  },
+  {
+    icon: AnimatedWorkflowIcon,
+    title: '300+ Integrations',
+    description:
+      'Seamlessly connect with your existing tech stack including Slack, Salesforce, HubSpot, Jira, and Microsoft 365.',
+  },
+  {
+    icon: AnimatedAssistantIcon,
+    title: 'Knowledge Brain',
+    description:
+      'Centralize your team knowledge. AI instantly answers questions based on your internal documentation and history.',
   },
 ];
 
@@ -87,89 +109,39 @@ export const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative p-8 rounded-3xl bg-background border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 flex flex-col h-full overflow-hidden"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="relative group"
             >
-              <motion.div
-                animate={{
-                  scale: hoveredIndex === index ? 1.02 : 1,
-                  y: hoveredIndex === index ? -8 : 0,
-                }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className={`relative h-full p-8 rounded-2xl bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg overflow-hidden ${
-                  feature.comingSoon ? 'opacity-90' : ''
-                }`}
-              >
-                {/* Glassmorphism gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                {/* Highlight Badge */}
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className={`absolute top-4 right-4 px-2.5 py-1 rounded-full text-xs font-medium ${
-                    feature.comingSoon
-                      ? 'bg-muted text-muted-foreground border border-border'
-                      : 'bg-primary/10 text-primary border border-primary/20'
-                  }`}
-                >
-                  {feature.highlight}
-                </motion.div>
-
-                {/* Icon */}
-                <motion.div
-                  className="relative w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
-                  whileHover={{ rotate: 5, scale: 1.1 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <feature.icon
-                    className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`}
-                    isHovered={hoveredIndex === index}
-                  />
-
-                  {/* AI Glow effect */}
-                  {!feature.comingSoon && (
-                    <motion.div
-                      className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl"
-                      animate={{
-                        opacity: hoveredIndex === index ? [0.4, 0.8, 0.4] : [0.3, 0.6, 0.3],
-                        scale: hoveredIndex === index ? [1, 1.3, 1] : [1, 1.2, 1],
-                      }}
-                      transition={{ duration: 2, repeat: Infinity }}
+              <div className="relative flex-1 flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="relative w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                    <feature.icon
+                      className="w-7 h-7 text-primary"
+                      isHovered={hoveredIndex === index}
                     />
+                  </div>
+                  {feature.highlight && (
+                    <div className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                      {feature.highlight}
+                    </div>
                   )}
-                </motion.div>
+                </div>
 
-                {/* Content */}
-                <h3
-                  className={`relative text-xl font-heading font-semibold mb-3 ${
-                    feature.comingSoon ? 'text-muted-foreground' : 'text-foreground'
-                  }`}
-                >
+                <h3 className="text-xl font-heading font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
-
-                {/* Animated divider */}
-                <motion.div
-                  className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-4"
-                  initial={{ scaleX: 0 }}
-                  animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
-                />
-
-                <p
-                  className={`relative leading-relaxed text-sm ${
-                    feature.comingSoon ? 'text-muted-foreground/70' : 'text-muted-foreground'
-                  }`}
-                >
+                
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   {feature.description}
                 </p>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -185,47 +157,36 @@ export const Features = () => {
               {features.map((feature, index) => (
                 <motion.div key={feature.title} className="flex-shrink-0 w-full px-4">
                   <div
-                    className={`p-8 rounded-2xl bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg relative overflow-hidden ${
-                      feature.comingSoon ? 'opacity-90' : ''
-                    }`}
+                    className="p-8 rounded-2xl bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg relative overflow-hidden"
                   >
                     {/* Glassmorphism gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
 
                     {/* Highlight Badge */}
-                    <div
-                      className={`absolute top-4 right-4 px-2.5 py-1 rounded-full text-xs font-medium ${
-                        feature.comingSoon
-                          ? 'bg-muted text-muted-foreground border border-border'
-                          : 'bg-primary/10 text-primary border border-primary/20'
-                      }`}
-                    >
-                      {feature.highlight}
-                    </div>
+                    {feature.highlight && (
+                      <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                        {feature.highlight}
+                      </div>
+                    )}
 
                     <div className="relative w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                      <feature.icon
-                        className={`w-7 h-7 ${feature.comingSoon ? 'text-muted-foreground' : 'text-primary'}`}
-                        isHovered={activeIndex === index}
-                      />
-                    </div>
-                    <h3
-                      className={`relative text-xl font-heading font-semibold mb-3 ${
-                        feature.comingSoon ? 'text-muted-foreground' : 'text-foreground'
-                      }`}
-                    >
+                    <feature.icon
+                      className="w-7 h-7 text-primary"
+                      isHovered={activeIndex === index}
+                    />
+                  </div>
+
+                  <div className="text-left">
+                    <h3 className="relative text-xl font-heading font-semibold mb-3 text-foreground">
                       {feature.title}
                     </h3>
                     <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-4" />
-                    <p
-                      className={`relative leading-relaxed ${
-                        feature.comingSoon ? 'text-muted-foreground/70' : 'text-muted-foreground'
-                      }`}
-                    >
+                    <p className="relative leading-relaxed text-muted-foreground">
                       {feature.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
               ))}
             </motion.div>
           </div>

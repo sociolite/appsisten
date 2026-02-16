@@ -71,6 +71,10 @@
       }
     }
   },
+  "integrations": {
+    "title": "Bekerja dengan Mulus",
+    "subtitle": "Terintegrasi dengan SAP, Odoo, Salesforce, atau alat analitik kustom lainnya. 500++ integrasi tersedia."
+  },
   "features": {
     "sectionTitle": "Semua yang Anda Butuhkan untuk Mengelola Bisnis",
     "sectionSubtitle": "Solusi ERP lengkap yang dibangun untuk bisnis berkembang",
